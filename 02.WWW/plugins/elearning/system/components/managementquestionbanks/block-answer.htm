@@ -1,0 +1,24 @@
+<div class="form-group">
+  <label>Câu trả lời {{block_answer}}</label>
+</div>
+<div class="row">                
+    <div class="col-sm">
+        <div class="form-group">
+            <textarea class="form-control"
+              id="txt_input_answer"
+              rows="4"
+              name="answer[{{block_answer}}]"
+              required></textarea>
+        </div>                
+    </div>  
+    <div class="col-sm">
+        <div class="form-group">
+            <input type="checkbox" name="is_correct[{{block_answer}}]" value="1"> Đáp án đúng<br>                            
+        </div>                             
+        <div class="form-group">
+            <a href="javascript:void(0)" class="add-answer">
+                Thêm Đáp án
+            </a>
+        </div>                
+    </div>  
+</div>

@@ -1,0 +1,31 @@
+<div class="left_content">
+    {% if(subject_id > 0) %}
+        {% partial __SELF__~'::edit-subject' %}                    
+    {% else %}
+        <h3 class="title_line">Môn học</h3>   
+        <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <form class="form-auth" id="form_khoahoc" data-request='onCreateSubject' data-request-success="ELEARNING.registerSubjectSuccess()">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="full_name" aria-describedby="emailHelp"
+                           placeholder="Tên môn học" required>
+                </div>
+                <div class="form-group">
+                    <div class="pic_file_topic">
+                        <span>Chọn hình ảnh</span>
+                        <input class="file_input_pic" name="avatar" type="file" required>
+                        <div class="pic_file_topic--avatar">
+                            <img src="images" alt="" class="pic_thumb_file">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" rows="4" name="info_body"
+                              placeholder="Mô tả" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn--full">lưu</button>
+                <input type='hidden' id='post-avatar' name='data-avatar'/>
+            </form>
+        </div>    
+    {% endif %}
+</div>

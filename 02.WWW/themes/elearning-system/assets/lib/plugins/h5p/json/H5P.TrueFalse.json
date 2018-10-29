@@ -1,0 +1,308 @@
+{
+  "semantics": [
+    {
+      "name": "media",
+      "type": "group",
+      "label": "Media",
+      "importance": "medium",
+      "fields": [
+        {
+          "name": "type",
+          "type": "library",
+          "label": "Type",
+          "importance": "medium",
+          "options": [
+            "H5P.Image 1.0",
+            "H5P.Video 1.4"
+          ],
+          "optional": true,
+          "description": "Optional media to display above the question."
+        }
+      ]
+    },
+    {
+      "name": "question",
+      "type": "text",
+      "label": "Question",
+      "importance": "high",
+      "widget": "html",
+      "enterMode": "p",
+      "tags": [
+        "strong",
+        "em",
+        "sub",
+        "sup",
+        "h2",
+        "h3"
+      ]
+    },
+    {
+      "name": "correct",
+      "type": "select",
+      "label": "Correct answer",
+      "importance": "high",
+      "widget": "radioGroup",
+      "alignment": "horizontal",
+      "options": [
+        {
+          "value": "true",
+          "label": "True"
+        },
+        {
+          "value": "false",
+          "label": "False"
+        }
+      ],
+      "default": "true"
+    },
+    {
+      "name": "l10n",
+      "type": "group",
+      "importance": "low",
+      "label": "User interface translations for True/False Questions",
+      "fields": [
+        {
+          "name": "trueText",
+          "type": "text",
+          "label": "Label for true button",
+          "importance": "low",
+          "default": "True"
+        },
+        {
+          "name": "falseText",
+          "type": "text",
+          "label": "Label for false button",
+          "importance": "low",
+          "default": "False"
+        },
+        {
+          "label": "Feedback text",
+          "importance": "low",
+          "name": "score",
+          "type": "text",
+          "default": "You got @score of @total points",
+          "description": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total possible points'"
+        },
+        {
+          "label": "Text for \"Check\" button",
+          "importance": "low",
+          "name": "checkAnswer",
+          "type": "text",
+          "default": "Check"
+        },
+        {
+          "label": "Text for \"Show solution\" button",
+          "importance": "low",
+          "name": "showSolutionButton",
+          "type": "text",
+          "default": "Show solution"
+        },
+        {
+          "label": "Text for \"Retry\" button",
+          "importance": "low",
+          "name": "tryAgain",
+          "type": "text",
+          "default": "Retry"
+        },
+        {
+          "name": "wrongAnswerMessage",
+          "type": "text",
+          "label": "Wrong Answer",
+          "importance": "low",
+          "default": "Wrong answer"
+        },
+        {
+          "name": "correctAnswerMessage",
+          "type": "text",
+          "label": "Correct Answer",
+          "importance": "low",
+          "default": "Correct answer"
+        },
+        {
+          "name": "scoreBarLabel",
+          "type": "text",
+          "label": "Textual representation of the score bar for those using a readspeaker",
+          "default": "You got :num out of :total points",
+          "importance": "low"
+        }
+      ],
+      "common": true
+    },
+    {
+      "name": "behaviour",
+      "type": "group",
+      "label": "Behavioural settings",
+      "importance": "low",
+      "fields": [
+        {
+          "name": "enableRetry",
+          "type": "boolean",
+          "label": "Enable \"Retry\" button",
+          "importance": "low",
+          "default": true
+        },
+        {
+          "name": "enableSolutionsButton",
+          "type": "boolean",
+          "label": "Enable \"Show Solution\" button",
+          "importance": "low",
+          "default": true
+        },
+        {
+          "name": "enableCheckButton",
+          "type": "boolean",
+          "label": "Enable \"Check\" button",
+          "importance": "low",
+          "default": true,
+          "optional": true,
+          "widget": "none"
+        },
+        {
+          "name": "disableImageZooming",
+          "type": "boolean",
+          "label": "Disable image zooming for question image",
+          "importance": "low",
+          "default": false
+        },
+        {
+          "name": "confirmCheckDialog",
+          "type": "boolean",
+          "label": "Show confirmation dialog on \"Check\"",
+          "importance": "low",
+          "default": false
+        },
+        {
+          "name": "confirmRetryDialog",
+          "type": "boolean",
+          "label": "Show confirmation dialog on \"Retry\"",
+          "importance": "low",
+          "default": false
+        },
+        {
+          "name": "autoCheck",
+          "type": "boolean",
+          "label": "Automatically check answer",
+          "importance": "low",
+          "default": false,
+          "description": "Note that accessibility will suffer if enabling this option"
+        },
+        {
+          "name": "feedbackOnCorrect",
+          "type": "text",
+          "label": "Feedback on correct answer",
+          "importance": "low",
+          "description": "This will override the default feedback text. Variables available: @score and @total",
+          "optional": true,
+          "maxLength": 2048
+        },
+        {
+          "name": "feedbackOnWrong",
+          "type": "text",
+          "label": "Feedback on wrong answer",
+          "importance": "low",
+          "description": "This will override the default feedback text. Variables available: @score and @total",
+          "optional": true,
+          "maxLength": 2048
+        }
+      ],
+      "description": "These options will let you control how the task behaves."
+    },
+    {
+      "name": "confirmCheck",
+      "type": "group",
+      "label": "Check confirmation dialog",
+      "importance": "low",
+      "fields": [
+        {
+          "name": "header",
+          "type": "text",
+          "label": "Header text",
+          "importance": "low",
+          "default": "Finish ?"
+        },
+        {
+          "name": "body",
+          "type": "text",
+          "label": "Body text",
+          "importance": "low",
+          "default": "Are you sure you wish to finish ?",
+          "widget": "html",
+          "enterMode": "p",
+          "tags": [
+            "strong",
+            "em",
+            "del",
+            "u"
+          ]
+        },
+        {
+          "name": "cancelLabel",
+          "type": "text",
+          "label": "Cancel button label",
+          "importance": "low",
+          "default": "Cancel"
+        },
+        {
+          "name": "confirmLabel",
+          "type": "text",
+          "label": "Confirm button label",
+          "importance": "low",
+          "default": "Finish"
+        }
+      ],
+      "common": true
+    },
+    {
+      "label": "Retry confirmation dialog",
+      "importance": "low",
+      "name": "confirmRetry",
+      "type": "group",
+      "common": true,
+      "fields": [
+        {
+          "label": "Header text",
+          "importance": "low",
+          "name": "header",
+          "type": "text",
+          "default": "Retry ?"
+        },
+        {
+          "label": "Body text",
+          "importance": "low",
+          "name": "body",
+          "type": "text",
+          "default": "Are you sure you wish to retry ?",
+          "widget": "html",
+          "enterMode": "p",
+          "tags": [
+            "strong",
+            "em",
+            "del",
+            "u"
+          ]
+        },
+        {
+          "label": "Cancel button label",
+          "importance": "low",
+          "name": "cancelLabel",
+          "type": "text",
+          "default": "Cancel"
+        },
+        {
+          "label": "Confirm button label",
+          "importance": "low",
+          "name": "confirmLabel",
+          "type": "text",
+          "default": "Confirm"
+        }
+      ]
+    }
+  ],
+  "language": null,
+  "javascript": {
+    "./lib/uploads/h5p/libraries/H5PEditor.RadioGroup-1.1/radio-group.js?ver=1.1.2": ""
+  },
+  "css": {
+    "./lib/uploads/h5p/libraries/H5PEditor.RadioGroup-1.1/radio-group.css?ver=1.1.2": ""
+  }
+}

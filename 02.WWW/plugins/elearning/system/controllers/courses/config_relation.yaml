@@ -1,0 +1,32 @@
+# relation behavior config
+
+level:
+    label: level
+    view:
+        list: $/elearning/system/models/level/columns.yaml        
+        form: $/elearning/system/models/level/fields.yaml
+        toolbarButtons: create|remove
+    manage:
+        showSearch: true
+        recordsPerPage: 10        
+        list: $/elearning/system/models/level/columns.yaml        
+        form: $/elearning/system/models/level/fields.yaml
+
+subject:
+    label: subject
+    view:       
+        form: $/elearning/system/models/subject/fields.yaml
+        toolbarButtons: create|remove
+    manage:       
+        list: $/elearning/system/models/subject/columns.yaml        
+        form: $/elearning/system/models/subject/fields.yaml
+
+topics:
+    label: topics
+    view:       
+        list: $/elearning/system/models/topic/columns.yaml        
+        form: $/elearning/system/models/topic/fields.yaml        
+        toolbarButtons: create|remove
+    manage:              
+        form: $/elearning/system/models/topic/fields.yaml        
+        list: $/elearning/system/models/topic/columns.yaml        

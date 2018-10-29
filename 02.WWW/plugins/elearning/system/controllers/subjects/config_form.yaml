@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Subject
+
+# Model Form Field configuration
+form: $/elearning/system/models/subject/fields.yaml
+
+# Model Class name
+modelClass: Elearning\System\Models\Subject
+
+# Default redirect location
+defaultRedirect: elearning/system/subjects
+
+# Create page
+create:
+    title: Create Subject
+    redirect: elearning/system/subjects/update/:id
+    redirectClose: elearning/system/subjects
+
+# Update page
+update:
+    title: Edit Subject
+    redirect: elearning/system/subjects
+    redirectClose: elearning/system/subjects
+
+# Preview page
+preview:
+    title: Preview Subject

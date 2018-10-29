@@ -1,0 +1,10 @@
+title = "GoodWorks Online Academy"
+url = "/khoa-hoc/:page?|^[0-9]+$"
+layout = "default"
+is_hidden = 0
+tab="courses"
+[courses]
+per-item = 6
+pageNumber = "{{ :page }}"
+==
+{% component 'courses' %}

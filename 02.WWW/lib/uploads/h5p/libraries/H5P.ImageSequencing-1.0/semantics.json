@@ -1,0 +1,94 @@
+[
+  {
+    "label":"Task Description",
+    "name":"taskDescription",
+    "type":"text",
+    "default":"Drag to arrange the images in the correct sequence",
+    "description":"A guide telling the user how to solve this task.",
+    "importance":"high"
+  },
+  {
+    "name":"sequenceImages",
+    "type":"list",
+    "label":"Images",
+    "importance":"high",
+    "entity":"image",
+    "min":3,
+    "field":{
+      "type":"group",
+      "name":"imageElement",
+      "label":"Image Element",
+      "importance":"high",
+      "fields":[
+        {
+          "name":"image",
+          "type":"image",
+          "label":"Image",
+          "importance":"high",
+          "ratio":1
+        },
+        {
+          "name":"imageDescription",
+          "type":"text",
+          "label":"Image Description (At Max 30 char)",
+          "importance":"low",
+          "maxLength":30,
+          "description":"An image description if they cannot recognize the image",
+          "ratio":1
+        }
+      ]
+    }
+  },
+  {
+    "label":"Localization",
+    "importance":"low",
+    "name":"l10n",
+    "type":"group",
+    "common":true,
+    "fields":[
+      {
+        "label":"Total Moves text",
+        "importance":"low",
+        "name":"totalMoves",
+        "type":"text",
+        "default":"Total Moves"
+      },
+      {
+        "label":"Time spent text",
+        "importance":"low",
+        "name":"timeSpent",
+        "type":"text",
+        "default":"Time spent"
+      },
+      {
+        "label":"Dropper Text",
+        "importance":"low",
+        "name":"dropperText",
+        "type":"text",
+        "default":"Please Drop"
+      },
+      {
+        "label": "Feedback text",
+        "importance": "low",
+        "name": "score",
+        "type": "text",
+        "default": "You got @score of @total points",
+        "description": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total possible points'"
+      },
+      {
+        "label": "Text for \"Check\" button",
+        "importance": "low",
+        "name": "checkAnswer",
+        "type": "text",
+        "default": "Check"
+      },
+      {
+      "label": "Text for \"Retry\" button",
+      "importance": "low",
+      "name": "tryAgain",
+      "type": "text",
+      "default": "Retry"
+      }
+    ]
+  }
+]

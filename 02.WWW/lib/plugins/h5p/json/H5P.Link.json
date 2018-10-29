@@ -1,0 +1,57 @@
+{
+  "semantics": [
+    {
+      "name": "title",
+      "type": "text",
+      "label": "Title",
+      "importance": "high"
+    },
+    {
+      "name": "linkWidget",
+      "importance": "high",
+      "type": "group",
+      "widget": "linkWidget",
+      "fields": [
+        {
+          "name": "protocol",
+          "type": "select",
+          "importance": "high",
+          "label": "Protocol",
+          "options": [
+            {
+              "value": "http://",
+              "label": "http://"
+            },
+            {
+              "value": "https://",
+              "label": "https://"
+            },
+            {
+              "value": "/",
+              "label": "(root relative)"
+            },
+            {
+              "value": "other",
+              "label": "other"
+            }
+          ],
+          "optional": true,
+          "default": "http://"
+        },
+        {
+          "name": "url",
+          "type": "text",
+          "importance": "high",
+          "label": "URL"
+        }
+      ]
+    }
+  ],
+  "language": null,
+  "javascript": {
+    "./lib/uploads/h5p/libraries/H5PEditor.UrlField-1.2/link-widget.js?ver=1.2.1": ""
+  },
+  "css": {
+    "./lib/uploads/h5p/libraries/H5PEditor.UrlField-1.2/link-widget.css?ver=1.2.1": ""
+  }
+}

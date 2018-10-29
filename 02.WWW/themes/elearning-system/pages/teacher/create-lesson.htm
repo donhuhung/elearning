@@ -1,0 +1,16 @@
+title = "GoodWorks Online Academy"
+url = "/tao-bai-hoc/:lesson_id?|^[0-9]+$"
+layout = "default"
+is_hidden = 0
+tab="create-lesson"
+[management_lesson]
+lessonId = "{{ :lesson_id }}"
+==
+<div class="section">
+    <div class="container">
+        <div class="d-flex content_detail">
+            {% component 'sidebar_teacher' %}
+            {% component 'management_lesson::create-lesson' %}
+        </div>
+    </div>
+</div>

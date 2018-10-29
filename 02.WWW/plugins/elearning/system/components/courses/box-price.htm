@@ -1,0 +1,58 @@
+<div class="shadow-box">
+    <h3 class="title_price">{{detail.discount?detail.discount|formatMoney:detail.price|formatMoney}}đ</h3>
+    <!--<a href="#" class="btn btn-link btn-link--addcard">Thêm vào giỏ hàng</a>
+    <a href="#" class="btn btn-link btn-link--purchase">mua ngay</a>-->
+
+    <a href="#" class="btn btn-link btn-link--addcard">Tham gia khóa học</a>
+    <div class="list-info-style">
+        <div class="item">
+            <img src="{{'assets/images/icon_start.png'|theme}}" alt="">
+            <span>Trình độ: {{detail.level.name}}</span>
+        </div>
+        <div class="item">
+            <img src="{{'assets/images/icon_start.png'|theme}}" alt="">
+            <span>Bài học: {{detail.total_lesson}} bài</span>
+        </div>
+        <div class="item">
+            <img src="{{'assets/images/icon_start.png'|theme}}" alt="">
+            <span>Xem trên máy tính, điện thoại, tablet</span>
+        </div>
+        <div class="item">
+            <img src="{{'assets/images/icon_start.png'|theme}}" alt="">
+            <span>Sở hữu mãi mãi</span>
+        </div>
+        <div class="item">
+            <img src="{{'assets/images/icon_start.png'|theme}}" alt="">
+            <span>Cấp chứng nhận hoàn thành</span>
+        </div>
+        <div class="item">
+            <img src="{{'assets/images/icon_start.png'|theme}}" alt="">
+            <a href="{{url('/forum/')}}{{detail.id}}"><span>Diễn đàn trao đổi thông tin</span></a>
+        </div>
+    </div>
+    <!--<div class="input-group input-group--discount">
+        <input type="text" class="form-control" id="inlineFormInputGroup"
+               placeholder="Mã khuyến mãi">
+        <div class="input-group-prepend">
+            <button class="btn input-group-text">
+                áp dụng
+            </button>
+        </div>
+    </div>-->
+    <hr/>
+    <div class="link-social">
+        <h6>Chia sẻ</h6>
+        <div class="link-social--link">
+            <a href="#">
+                <img src="{{'assets/images/linkin.png'|theme}}" alt="">
+            </a>
+            <a href="#">
+                <img src="{{'assets/images/facebook.png'|theme}}" alt="">
+            </a>
+            <a href="#">
+                <img src="{{'assets/images/google.png'|theme}}" alt="">
+            </a>
+
+        </div>
+    </div>
+</div>

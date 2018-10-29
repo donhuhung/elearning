@@ -1,0 +1,93 @@
+description = "This is main layout of theme"
+forceUrl = 0
+[homepage]
+security = "user"
+
+[account]
+redirect = "dashboard-teacher"
+[account_elearning]
+[sociallogin]
+[session]
+[sidebar_teacher]
+==
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">        
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="description" content="{{ this.page.meta_description}}">
+        <meta name="keywords" content="{{ this.page.meta_keywords}}">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400,700,700i&amp;subset=vietnamese"
+              rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <title>{{ this.page.title }}</title>
+        <link href="{{ 'assets/images/logo.ico'|theme }}" rel="shortcut icon">
+        <link rel="stylesheet" href="{{'assets/css/main.css'|theme}}">               
+        <link rel="stylesheet" href="{{'assets/css/setting.css'|theme}}">
+        <link rel="stylesheet" href="{{'assets/css/sweetalert.css'|theme}}">
+        <script>
+            var URL_ROOT = '{{url("/")}}';
+            var STOGARE = '{{url("storage/app/media/share-fb/ ")}}';
+        </script>
+
+    </script>
+
+</head>
+<body>
+    <div class="page">
+        {% partial "layout/header" %}
+        {% if this.page.tab == "homepage"%}
+        <div class="banner_carousel">
+            <div class="_slider">
+                <div class="item">
+                    <div class="banner" style="background-image: url({{'assets/images/banner_home.jpg'|theme}})"></div>
+                </div>
+                <div class="item">
+                    <div class="banner" style="background-image: url({{'assets/images/banner_home.jpg'|theme}})"></div>
+                </div>
+
+            </div>
+        </div>
+        {% endif %}
+        <div class="main">
+            {% page %}
+        </div>            
+        {% partial "layout/footer" %}
+        {% partial "layout/modal" %}
+    </div>
+    <div id="fb-root"></div>
+</body>
+    {% if (this.page.tab == "create-lesson")%}
+        <link rel='stylesheet' id='h5p-core-styles-h5p-css' href="{{'assets/lib/plugins/h5p/h5p-php-library/styles/h5p.css'|theme}}"  type='text/css' media='all' />
+        <link rel='stylesheet' id='h5p-core-styles-h5p-confirmation-dialog-css' href="{{'assets/lib/plugins/h5p/h5p-php-library/styles/h5p-confirmation-dialog.css'|theme}}" type='text/css' media='all' />
+        <link rel='stylesheet' id='h5p-core-styles-h5p-core-button-css' href="{{'assets/lib/plugins/h5p/h5p-php-library/styles/h5p-core-button.css'|theme}}" type='text/css media='all' />
+
+        <script type='text/javascript' src="{{'assets/lib/plugins/h5p/h5p-php-library/js/jquery.js'|theme}}"></script>
+        <script type='text/javascript' src="{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p.js'|theme}}"></script>
+        <script type='text/javascript' src="{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p-event-dispatcher.js'|theme}}"></script>
+        <script type='text/javascript' src="{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p-x-api-event.js'|theme}}"></script>
+        <script type='text/javascript' src="{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p-x-api.js'|theme}}"></script>
+        <script type='text/javascript' src="{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p-content-type.js'|theme}}"></script>
+        <script type='text/javascript' src="{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p-confirmation-dialog.js'|theme}}"></script>
+        <script type='text/javascript' src="{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p-action-bar.js'|theme}}"></script>
+        <script type='text/javascript' src="{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-editor.js'|theme}}"></script>
+        <script type='text/javascript' src="{{'assets/lib/plugins/h5p/admin/scripts/h5p-editor.js'|theme}}"></script>
+        <script type='text/javascript' src="{{'assets/lib/plugins/h5p/h5p-editor-php-library/language/en.js'|theme}}"></script>
+        <script type='text/javascript' src="{{'assets/lib/plugins/h5p/h5p-php-library/js/jquery.js'|theme}}"></script>
+        <script type='text/javascript' src="{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p-display-options.js'|theme}}"></script>
+        <script type='text/javascript' src="{{'assets/lib/plugins/h5p/admin/scripts/h5p-toggle.js'|theme}}"></script>
+    {% endif%}
+    <script src="{{'assets/js/start.js'|theme}}"></script>
+    <script src="{{'assets/js/start-php.js'|theme}}"></script>
+    <script src="{{'assets/js/sweetalert.min.js'|theme}}"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    {% framework extras %}
+    {% scripts %}
+</html>

@@ -1,0 +1,95 @@
+{
+  "semantics": [
+    {
+      "label": "Type of chart",
+      "name": "graphMode",
+      "type": "select",
+      "importance": "high",
+      "options": [
+        {
+          "value": "pieChart",
+          "label": "Pie Chart"
+        },
+        {
+          "value": "barChart",
+          "label": "Bar Chart"
+        }
+      ],
+      "default": "pieChart"
+    },
+    {
+      "label": "Data elements",
+      "name": "listOfTypes",
+      "type": "list",
+      "importance": "high",
+      "entity": "option",
+      "min": 1,
+      "defaultNum": 2,
+      "field": {
+        "name": "type",
+        "type": "group",
+        "label": "Data element",
+        "importance": "high",
+        "fields": [
+          {
+            "name": "text",
+            "type": "text",
+            "label": "Name",
+            "importance": "medium"
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "label": "Value",
+            "importance": "low",
+            "default": 1,
+            "min": 1
+          },
+          {
+            "name": "color",
+            "type": "text",
+            "widget": "colorSelector",
+            "label": "Color",
+            "importance": "low",
+            "default": "#000",
+            "optional": true,
+            "spectrum": {
+              "showInput": true,
+              "preferredFormat": "hex"
+            }
+          },
+          {
+            "name": "fontColor",
+            "type": "text",
+            "widget": "colorSelector",
+            "label": "Font Color",
+            "importance": "low",
+            "default": "#fff",
+            "optional": true,
+            "spectrum": {
+              "showInput": true,
+              "preferredFormat": "hex"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "label": "Text read by readspeakers defining the figure as a chart.",
+      "name": "figureDefinition",
+      "type": "text",
+      "importance": "low",
+      "default": "Chart",
+      "common": true
+    }
+  ],
+  "language": null,
+  "javascript": {
+    "./lib/uploads/h5p/libraries/H5PEditor.ColorSelector-1.2/scripts/spectrum.js?ver=1.2.3": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.ColorSelector-1.2/scripts/color-selector.js?ver=1.2.3": ""
+  },
+  "css": {
+    "./lib/uploads/h5p/libraries/H5PEditor.ColorSelector-1.2/styles/spectrum.css?ver=1.2.3": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.ColorSelector-1.2/styles/color-selector.css?ver=1.2.3": ""
+  }
+}

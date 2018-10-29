@@ -1,0 +1,15 @@
+<div class="section gray">
+    <div class="container">
+        <h3 class="title_line">Môn học</h3>
+        <div class="cards">
+            {% for subject in subjects%}
+            <div class="item">
+                <div class="_content">
+                    <img src="/storage/app/media/{{subject.thumbnail}}" alt=""/>
+                    <p class="caption_item">{{subject.name}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

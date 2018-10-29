@@ -1,0 +1,61 @@
+<div class="right_content">
+    <div class="info_user_khoahoc">
+        <div class="content_item">
+            <div class="pic-thumb">
+                <div class="avatar">
+                    <a href='/dashboard-teacher'>
+                    {% if user.avatar%}
+                        <img src="{{user.avatar.getPath()}}" alt="">
+                    {% else%}
+                        <img src="{{'assets/images/avt.png'|theme}}" alt="">
+                    {% endif %}
+                    </a>
+                </div>
+                <p class="name">{{user.name}}</p>
+                <p class="email">{{user.email}}</p>
+            </div>
+        </div>
+        <div class="content_item">    
+            {%if user.phone%}
+            <p class="text-gray">
+                <span class="text-grat--title">Số điện thoại: {{user.phone}}</span>
+            </p>
+            {% endif %}
+            <p class="text-gray">
+                <span class="text-grat--title">Giới tính: {{user.gender==1?"Nam":"Nữ"}}</span>
+            </p>
+            {%if user.address%}
+             <p class="text-gray">
+                <span class="text-grat--title">Địa chỉ: {{user.address}}</span>
+            </p>
+            {% endif %}
+        </div>
+        <div class="content_item">
+            <p class="text-gray">
+                <a href="/user-profile" class="text-grat--link">
+                    Chỉnh sửa thông tin cá nhân
+                </a>
+            </p>
+            <p class="text-gray">
+                <a href="#" class="text-grat--link">
+                    Khóa học tham gia
+                </a>
+            </p>
+            <p class="text-gray">
+                <a href="#" class="text-grat--link">
+                    Lịch học
+                </a>
+            </p>
+            <p class="text-gray">
+                <a href="#" class="text-grat--link">
+                    Kết quả kiểm tra
+                </a>
+            </p>
+            <p class="text-gray">
+                <a href="javascript:void(0)" data-request="onLogout" data-request-data="redirect: '/'" class="text-grat--link">
+                    Đăng xuất
+                </a>
+            </p>
+        </div>
+    </div>
+</div>

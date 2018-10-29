@@ -1,0 +1,49 @@
+<div class="gray inset">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb--home breadcrumb--transparent">
+                <li class="breadcrumb-item font-weight-bold">
+                    <a href="{{url('/')}}">
+                        <img src="{{'assets/images/icon_home.png'|theme}}" alt="">
+                        Trang chủ
+                    </a>
+                </li>
+                <li class="breadcrumb-item"><a href="/khoa-hoc">Danh sách khóa học</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Khóa học chi tiết</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="section">
+    <div class="container">
+        <div class="d-flex content_detail">
+            <div class="left_content">
+                <h2 class="title_detail">
+                    {{detail.name}}
+                </h2>
+                <div class="ders-thumbnail">
+                    <p class="author">Giảng viên: {{detail.teacher.name}}</p>
+                    <div class="card-text card-text--rating">
+                        <p class="rating">
+                            <!--{{detail.rating|generateRating}}-->
+                            {{5|generateRating}}
+                        </p>
+                        <!--<p class="point">{{detail.rating}}</p>-->
+                    </div>
+                    <p class="drs-member">30 Học viên tham gia khóa học</p>
+                </div>
+                <img class="img_dt" src="/storage/app/media/{{detail.thumbnail}}" alt="">
+                <div class="info_dt">
+                    {{detail.content|raw}}
+                </div>
+                {% partial __SELF__~'::info-teacher' %}
+
+            </div>
+            <div class="right_content">
+                {% partial __SELF__~'::box-price' %}
+                {% partial __SELF__~'::other-course' %}
+            </div>
+        </div>
+    </div>
+</div>

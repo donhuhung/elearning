@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Course
+
+# Model Form Field configuration
+form: $/elearning/system/models/course/fields.yaml
+
+# Model Class name
+modelClass: Elearning\System\Models\Course
+
+# Default redirect location
+defaultRedirect: elearning/system/courses
+
+# Create page
+create:
+    title: Create Course
+    redirect: elearning/system/courses/update/:id
+    redirectClose: elearning/system/courses
+
+# Update page
+update:
+    title: Edit Course
+    redirect: elearning/system/courses
+    redirectClose: elearning/system/courses
+
+# Preview page
+preview:
+    title: Preview Course

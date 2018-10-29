@@ -1,0 +1,22 @@
+.text-content h5{
+    line-height: 40px;
+}
+.cards .item{
+    padding:7px !important;
+}
+.abouts_info .item .icon{
+    width: 70px;
+    height: 70px;
+}
+.abouts_info .item .icon img{
+    width:60%;
+}
+.abouts_info .item .title{
+    font-size: 25px;
+}
+.flash_content .item--content .txt{
+    font-size:23px;
+}
+.flash_content .item--content .num{
+    font-size: 25px;
+}

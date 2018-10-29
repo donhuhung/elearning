@@ -1,0 +1,10 @@
+title = "Forum - GoodWorks Online Academy"
+url = "/forum/:course_id?|^[0-9]+$/:page?|^[0-9]+$"
+layout = "default"
+is_hidden = 0
+tab="forums"
+[forum]
+per-item = 6
+pageNumber = "{{ :page }}"
+==
+{% component 'forum' %}

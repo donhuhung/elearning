@@ -1,0 +1,79 @@
+{
+  "semantics": [
+    {
+      "name": "taskDescription",
+      "type": "text",
+      "importance": "high",
+      "label": "Title",
+      "description": "Title for the documentation tool.",
+      "default": "Documentation tool",
+      "optional": true
+    },
+    {
+      "name": "pagesList",
+      "type": "list",
+      "label": "Elements",
+      "importance": "high",
+      "widgets": [
+        {
+          "name": "VerticalTabs",
+          "label": "Default"
+        }
+      ],
+      "min": 1,
+      "entity": "page",
+      "field": {
+        "name": "page",
+        "type": "library",
+        "label": "Page type",
+        "importance": "high",
+        "description": "Library for this slide.",
+        "options": [
+          "H5P.StandardPage 1.3",
+          "H5P.GoalsPage 1.4",
+          "H5P.GoalsAssessmentPage 1.3",
+          "H5P.DocumentExportPage 1.3"
+        ]
+      }
+    },
+    {
+      "name": "i10n",
+      "type": "group",
+      "label": "Localize documentation tool buttons",
+      "importance": "low",
+      "common": true,
+      "collapsed": true,
+      "fields": [
+        {
+          "label": "Previous button label",
+          "name": "previousLabel",
+          "type": "text",
+          "default": "Previous",
+          "importance": "low"
+        },
+        {
+          "label": "Next button label",
+          "name": "nextLabel",
+          "type": "text",
+          "default": "Next",
+          "importance": "low"
+        },
+        {
+          "label": "Close button label",
+          "name": "closeLabel",
+          "type": "text",
+          "default": "Close",
+          "importance": "low"
+        }
+      ]
+    }
+  ],
+  "language": null,
+  "javascript": {
+    "./lib/uploads/h5p/libraries/H5PEditor.VerticalTabs-1.3/vertical-tabs.js?ver=1.3.5": ""
+  },
+  "css": {
+    "./lib/uploads/h5p/libraries/FontAwesome-4.5/h5p-font-awesome.min.css?ver=4.5.4": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.VerticalTabs-1.3/styles/css/vertical-tabs.css?ver=1.3.5": ""
+  }
+}

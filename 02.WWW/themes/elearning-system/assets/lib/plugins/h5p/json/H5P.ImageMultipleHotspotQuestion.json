@@ -1,0 +1,207 @@
+{
+  "semantics": [
+    {
+      "name": "imageMultipleHotspotQuestion",
+      "type": "group",
+      "importance": "high",
+      "label": "Image Multiple Hotspot Question Editor",
+      "widget": "wizard",
+      "fields": [
+        {
+          "name": "backgroundImageSettings",
+          "type": "group",
+          "label": "Background image",
+          "importance": "high",
+          "fields": [
+            {
+              "name": "questionTitle",
+              "type": "text",
+              "label": "The title of this question",
+              "importance": "high",
+              "default": "Image hotspot question",
+              "description": "Used in summaries, statistics etc."
+            },
+            {
+              "name": "backgroundImage",
+              "type": "image",
+              "label": "Background image",
+              "importance": "high",
+              "description": "Select an image to use as background the image hotspot question."
+            }
+          ]
+        },
+        {
+          "name": "hotspotSettings",
+          "type": "group",
+          "label": "Hotspots",
+          "importance": "high",
+          "widget": "imageMultipleHotspotQuestion",
+          "description": "Choose appropriate figure for your hotspot, configure it, then drag and resize it into place.",
+          "fields": [
+            {
+              "name": "taskDescription",
+              "type": "text",
+              "label": "Task description",
+              "importance": "high",
+              "description": "Instructions to the user.",
+              "optional": true
+            },
+            {
+              "name": "hotspotName",
+              "type": "text",
+              "label": "Hotspot Name",
+              "importance": "high",
+              "description": "Please enter what the user is trying to find i.e. risks, objects, errors (this will be used in feedback statements).",
+              "optional": true
+            },
+            {
+              "name": "numberHotspots",
+              "type": "number",
+              "label": "Number of correct hotspots that need to be found for question completion",
+              "importance": "high",
+              "description": "If left blank, will default to the number of correct hotspots created.",
+              "optional": true
+            },
+            {
+              "name": "hotspot",
+              "type": "list",
+              "label": "Hotspot",
+              "importance": "high",
+              "entity": "Hotspot",
+              "field": {
+                "type": "group",
+                "label": "Hotspot",
+                "importance": "high",
+                "fields": [
+                  {
+                    "name": "userSettings",
+                    "type": "group",
+                    "label": "userSettings",
+                    "importance": "low",
+                    "fields": [
+                      {
+                        "name": "correct",
+                        "type": "boolean",
+                        "label": "Correct",
+                        "importance": "low",
+                        "description": "There can be multiple correct hotspots. The user gets correct/incorrect feedback immediately after each click. The feedback will be displayed in the form of - (Text entered below) (Number of hotspots found) of (Correct hotspots needed) (Hotspot Name entered above)."
+                      },
+                      {
+                        "name": "feedbackText",
+                        "type": "text",
+                        "label": "Feedback",
+                        "importance": "low",
+                        "placeholder": "Correct, you have found",
+                        "optional": true
+                      }
+                    ]
+                  },
+                  {
+                    "name": "computedSettings",
+                    "type": "group",
+                    "label": "computedSettings",
+                    "importance": "low",
+                    "fields": [
+                      {
+                        "name": "x",
+                        "type": "number",
+                        "optional": true
+                      },
+                      {
+                        "name": "y",
+                        "type": "number",
+                        "optional": true
+                      },
+                      {
+                        "name": "width",
+                        "type": "number",
+                        "optional": true
+                      },
+                      {
+                        "name": "height",
+                        "type": "number",
+                        "optional": true
+                      },
+                      {
+                        "name": "figure",
+                        "type": "text",
+                        "optional": true
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "noneSelectedFeedback",
+              "type": "text",
+              "label": "Feedback if the user selects an empty spot:",
+              "importance": "low",
+              "placeholder": "You didn't locate any hotspots, try again!",
+              "optional": true
+            },
+            {
+              "name": "alreadySelectedFeedback",
+              "type": "text",
+              "label": "Feedback if the user selects an already found hotspot:",
+              "placeholder": "You have already found this one!",
+              "importance": "low",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "language": null,
+  "javascript": {
+    "./lib/uploads/h5p/libraries/H5P.DragNDrop-1.1/drag-n-drop.js?ver=1.1.5": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNResize-1.2/H5P.DragNResize.js?ver=1.2.5": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNBar-1.4/scripts/drag-n-bar.js?ver=1.4.8": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNBar-1.4/scripts/context-menu.js?ver=1.4.8": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNBar-1.4/scripts/dialog.js?ver=1.4.8": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNBar-1.4/scripts/drag-n-bar-element.js?ver=1.4.8": "",
+    "./lib/uploads/h5p/libraries/Tether-1.0/scripts/tether.min.js?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/Drop-1.0/js/drop.min.js?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/H5P.Transition-1.0/transition.js?ver=1.0.4": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.2/js/joubel-help-dialog.js?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.2/js/joubel-message-dialog.js?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.2/js/joubel-progress-circle.js?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.2/js/joubel-simple-rounded-button.js?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.2/js/joubel-speech-bubble.js?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.2/js/joubel-throbber.js?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.2/js/joubel-tip.js?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.2/js/joubel-slider.js?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.2/js/joubel-score-bar.js?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.2/js/joubel-progressbar.js?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.2/js/joubel-ui.js?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.Question-1.2/scripts/question.js?ver=1.2.3": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.Wizard-1.1/Scripts/Wizard.js?ver=1.1.0": "",
+    "./lib/uploads/h5p/libraries/H5P.ImageMultipleHotspotQuestion-1.0/image-multiple-hotspot-question.js?ver=1.0.0": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.ImageMultipleHotspotQuestion-1.0/image-multiple-hotspot-question-editor.js?ver=1.0.0": ""
+  },
+  "css": {
+    "./lib/uploads/h5p/libraries/H5P.DragNResize-1.2/H5P.DragNResize.css?ver=1.2.5": "",
+    "./lib/uploads/h5p/libraries/H5P.FontIcons-1.0/styles/h5p-font-icons.css?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNBar-1.4/styles/drag-n-bar.css?ver=1.4.8": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNBar-1.4/styles/dialog.css?ver=1.4.8": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNBar-1.4/styles/context-menu.css?ver=1.4.8": "",
+    "./lib/uploads/h5p/libraries/FontAwesome-4.5/h5p-font-awesome.min.css?ver=4.5.4": "",
+    "./lib/uploads/h5p/libraries/Tether-1.0/styles/tether.min.css?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/Drop-1.0/css/drop-theme-arrows-bounce.min.css?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.2/css/joubel-help-dialog.css?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.2/css/joubel-message-dialog.css?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.2/css/joubel-progress-circle.css?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.2/css/joubel-simple-rounded-button.css?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.2/css/joubel-speech-bubble.css?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.2/css/joubel-tip.css?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.2/css/joubel-slider.css?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.2/css/joubel-score-bar.css?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.2/css/joubel-progressbar.css?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.2/css/joubel-ui.css?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.Question-1.2/styles/question.css?ver=1.2.3": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.Wizard-1.1/Styles/Wizard.css?ver=1.1.0": "",
+    "./lib/uploads/h5p/libraries/H5P.ImageMultipleHotspotQuestion-1.0/image-multiple-hotspot-question.css?ver=1.0.0": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.ImageMultipleHotspotQuestion-1.0/image-multiple-hotspot-question-editor.css?ver=1.0.0": ""
+  }
+}

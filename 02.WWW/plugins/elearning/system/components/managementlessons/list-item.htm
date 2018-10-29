@@ -1,0 +1,29 @@
+{% for item in listLessons%}
+<div class="item">
+    <div class="_content">
+        <h4 class="_title">
+            <a href="#">
+                Complete Guide to Tensor Flow for Deep
+            </a>
+        </h4>
+        <div class="ders">
+            <div class="pic_thumb">
+                <img src="{{'assets/images/img_kh.jpg'|theme}}" alt="">
+            </div>
+            <p class="title_ders">
+                Complete Guide to Tensor Flow for Deep...
+            </p>
+        </div>
+        <div class="link">
+            <a class="color_gray" href="#">
+                <i class="fa fa-edit"></i>
+                Chỉnh sửa
+            </a>
+            <a class="color_blue" href="#">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+                Xoá
+            </a>
+        </div>
+    </div>
+</div>
+{% endfor %}

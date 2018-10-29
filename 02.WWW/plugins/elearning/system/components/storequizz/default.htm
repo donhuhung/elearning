@@ -1,0 +1,22 @@
+<div class="section">
+    <div class="container">
+        <div class="d-flex content_detail">
+            {% component 'sidebar_teacher' %}
+            <div class="left_content">
+                <div class="d-flex d-flex--dropdown d-flex--create">                    
+                    <div class="dropdown dropdown--custom">
+                        <button onclick="window.location.href='/tao-de-thi'" class="btn btn-secondary _blue" type="button">
+                            Tạo mới
+                        </button>
+                    </div>
+                </div>
+                <div class="list-own-course">
+                    {% partial __SELF__~'::list-item' %}                
+                </div>
+                {% if listQuestions.lastPage > 1 %}
+                    {% partial __SELF__~'::pagination' galleries = listQuestions %}
+                {% endif %} 
+            </div>                                                          
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="shadow-box">
+    <h3 class="title_line title_line--small">
+        Khóa học liên quan
+    </h3>
+    <div class="card-deck card-deck--wrap card-deck--marketing card-deck--block">
+        {% for other in otherPosts%}
+        <div class="card">
+            <a class="link_img" href="/khoa-hoc/{{other.slug}}">
+                <img class="card-img-top" src="/storage/app/media/{{other.thumbnail}}" alt="{{other.name}}">
+            </a>
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href="/khoa-hoc/{{other.slug}}">{{other.name}}</a>
+                </h5>
+                <div class="card-text card-text--rating">
+                    <p class="rating">
+                       {{other.rating|generateRating}}
+                    </p>
+                </div>
+                <div class="card-text card-price">
+                    <p class="discount">{{other.discount?other.discount|formatMoney:other.price|formatMoney}}đ</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

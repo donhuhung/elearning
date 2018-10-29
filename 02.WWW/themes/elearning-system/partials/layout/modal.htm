@@ -1,0 +1,159 @@
+description = "Modal login partial"
+==
+<!-- Modal -->
+<div class="modal fade" id="modal_page_signin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog--page" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title modal-title--page" id="exampleModalLabel">
+                    <span>Đăng nhập</span>
+                </h5>
+                <button type="button" class="close close--modal" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        <img src="{{'assets/images/close.png'|theme}}" alt="">
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="box-auth-social">
+                    <p class="title-auth-small">Đăng nhập thông qua tài khoản</p>
+                    <div class="social-auth">
+                        {% for name, link in social_login_links %}
+                            {% if name == "Google"%}
+                                <a href="{{link}}"><img src="{{'assets/images/gg_plus.png'|theme}}" alt="{{name}}"></a>
+                            {% else %}
+                                <a href="{{link}}"><img src="{{'assets/images/face.png'|theme}}" alt="{{name}}"></a>
+                            {% endif %}
+                        {% endfor %}
+                        <a href="#"><img src="{{'assets/images/link.png'|theme}}" alt=""></a>
+                    </div>
+                    <p class="line_middle"><span>Hoặc</span></p>
+                </div>
+
+                <form class="form-auth" method="post" data-request="account::onSignin" action="">
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email"
+                               id="txt_input_signin_email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password"
+                               id="txt_input_signin_password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="form-check form-check--custom">
+                                    <input class="form-check-input check-custom" type="checkbox" id="inlineFormCheck">
+                                    <label class="form-check-label" for="inlineFormCheck">
+                                        <div class="mark_check">
+                                            <span class="mark_check--active"></span>
+                                        </div>
+                                        Duy trì đăng nhập
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <p class="text-right">Quên mật khẩu?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn--full">Đăng nhập</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_page_signup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog--page" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title modal-title--page">
+                    <span>Đăng ký</span>
+                </h5>
+                <p class="modal-title modal-title--small">
+                    Vui lòng điền đầy đủ thông tin vào các ô trống.
+                </p>
+                <button type="button" class="close close--modal" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        <img src="{{'assets/images/close.png'|theme}}" alt="">
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="signUpForm" method="post" data-request="account::onRegister" class="form-auth" action="">
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <input type="text" class="form-control"
+                                       id="txt_input_name" name="name"
+                                       aria-describedby="emailHelp" placeholder="Họ & Tên">
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <select class="custom-select" name="gender" required>
+                                    <option value="">Giới Tính</option>
+                                    <option value="1">Nam</option>
+                                    <option value="0">Nữ</option>                                    
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control"
+                               id="txt_input_password" name="password" placeholder="Mật khẩu">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control"
+                               id="txt_input_phone" name="phone"
+                               aria-describedby="emailHelp" placeholder="Số Điện Thoại">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email"
+                               id="txt_input_email" placeholder="Email">                        
+                    </div>
+                    <div class="form-group">
+                        <input type="date" class="form-control" name="birthday"
+                               id="txt_input_date" placeholder="Ngày sinh">                        
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="address"
+                                  id="txt_input_adress" placeholder="Địa Chỉ">Địa Chỉ</textarea>                        
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <select class="custom-select" name="province_id" id="province" required>
+                                    <option value="">Tỉnh/Thành Phố</option>   
+                                    {% for province in provinces%}
+                                        <option value="{{province.id}}">{{province.name}}</option>                                    
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <select class="custom-select" name="district_id" id="district" required>
+                                    <option value="">Quận/Huyện</option>
+                                </select>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control"
+                                  id="txt_input_introduce"
+                                  rows="4" name="description"
+                                  placeholder="Giới thiệu ngắn về bản thân">Giới thiệu ngắn về bản thân</textarea>                        
+                    </div>
+                    <button type="submit" class="btn btn-primary btn--full">Đăng Ký</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

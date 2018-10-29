@@ -1,0 +1,9 @@
+title = "GoodWorks Online Academy"
+url = "/khoa-hoc/:slug|^[0-9\-a-z]+$"
+layout = "default"
+is_hidden = 0
+tab="course"
+[courses]
+slug = "{{:slug}}"
+==
+{% component 'courses::detail' %}

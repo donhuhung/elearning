@@ -1,0 +1,72 @@
+<h3 class="title_line">Cập nhật khóa học</h3>    
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <form class="form-auth" id="form_coach_learn" data-request='onUpdateCourse' data-request-success="ELEARNING.registerCourseSuccess('edit')">
+            <div class="form-group">
+                <div class="pic_file_topic">
+                    <span>Chọn hình ảnh</span>
+                    <input class="file_input_pic" name="avatar" type="file">
+                    <div class="pic_file_topic hasAvatar">
+                        <img src="/storage/app/media/{{detail.thumbnail}}" alt="" class="pic_thumb_file">
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <select class="custom-select" name="subject" id="subject" required>
+                            <option value="">Môn học</option>
+                            {% for course in courses%}
+                            <option {% if(detail.subject_id == course.id) %} selected="selected" {% endif %} value="{{course.id}}">{{course.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>                
+                </div>  
+                <div class="col-sm">
+                    <div class="form-group">
+                        <select class="custom-select" name="level" id="level" required>
+                            <option value="">Trình độ</option>
+                            {% for level in levels%}
+                            <option {% if(detail.level_id == level.id) %} selected="selected" {% endif %} value="{{level.id}}">{{level.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>                
+                </div>  
+            </div>
+
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <input type="text" name="full_name" class="form-control" value="{{detail.name}}" required>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <input type="number" name="price" min="0" class="form-control" value="{{detail.price}}" required>
+                    </div>
+                </div>
+            </div>                           
+            <div class="form-group form-group--flex">
+                <div class="input_info">
+                    <input type="number" name="quatity" min="1" class="form-control" value="{{detail.total_student}}" required>
+                </div>
+                <div class="input_info">
+                    <input type="text" name="total_lesson" class="form-control" value="{{detail.total_lesson}}" required>
+                </div>
+                <div class="card-text card-text--rating card-text--flex">
+                    <input type="text" name="total_hour" class="form-control" value="{{detail.total_time_learn}}" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" name="info_body" rows="4" required>{{detail.description}}</textarea>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" name="content" rows="4" required>{{detail.content}}</textarea>
+            </div>
+            <input type='hidden' id='post-avatar' name='data-avatar'/>
+            <button type="submit" class="btn btn-primary btn--full">lưu</button>
+        </form>
+
+    </div>        
+</div>

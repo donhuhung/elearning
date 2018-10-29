@@ -1,0 +1,91 @@
+<div class="right_content">
+    <div class="info_user_khoahoc">
+        <div class="content_item">
+            <div class="pic-thumb">
+                <div class="avatar">
+                    <a href='/dashboard-teacher'>
+                        {% if user.avatar%}
+                        <img src="{{user.avatar.getPath()}}" alt="">
+                        {% else%}
+                        <img src="{{'assets/images/avt.png'|theme}}" alt="">
+                        {% endif %}
+                    </a>
+                </div>
+                <p class="name">{{user.name}}</p>
+                <p class="email">{{user.email}}</p>
+            </div>
+        </div>
+        <div class="content_item">
+            <div class="link-social-network" role="tablist">
+                <a href="#" class="item"><img src="{{'assets/images/fb.png'|theme}}" alt=""></a>
+                <a href="#" class="item"><img src="{{'assets/images/gg.png'|theme}}" alt=""></a>
+                <a href="#" class="item"><img src="{{'assets/images/sky.png'|theme}}" alt=""></a>
+                <a href="#" class="item"><img src="{{'assets/images/zalo.png'|theme}}" alt=""></a>
+            </div>            
+        </div>
+        <div class="content_item">            
+            <p class="text-gray">
+                <span class="text-grat--title">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    Học viên theo học: 300
+                </span>
+            </p>
+            <p class="text-gray">
+                <span class="text-grat--title">
+                    <i class="fa fa-object-group" aria-hidden="true"></i>
+                    Khóa học giảng dạy: 10
+                </span>
+            </p>
+        </div>
+        <div class="content_item">
+            <p class="text-gray">               
+                <a href="/profile-teacher" class="text-grat--link">
+                    <i class="fa fa-address-card"></i>
+                    Chỉnh sửa thông tin cá nhân
+                </a>
+            </p>
+            <p class="text-gray">
+                <a href="/quan-ly-mon-hoc" class="text-grat--link">
+                    <i class="fa fa-pencil-square-o"></i>
+                    Quản lý Môn học
+                </a>
+            </p>
+            <p class="text-gray">
+                <a href="/quan-ly-khoa-hoc" class="text-grat--link">
+                    <i class="fa fa-pencil-square-o"></i>
+                    Quản lý Khóa học
+                </a>
+            </p>
+            <p class="text-gray">
+                <a href="/quan-ly-bai-hoc" class="text-grat--link">
+                    <i class="fa fa-pencil-square-o"></i>
+                    Quản lý Bài học
+                </a>
+            </p>
+            <p class="text-gray">
+                <a href="/quan-ly-ngan-hang-cau-hoi" class="text-grat--link">
+                    <i class="fa fa-university" aria-hidden="true"></i>
+                    Ngân hàng câu hỏi
+                </a>
+            </p>
+            <p class="text-gray">
+                <a href="/quan-ly-ngan-hang-de-thi" class="text-grat--link">
+                    <i class="fa fa-university" aria-hidden="true"></i>
+                    Bộ đề thi
+                </a>
+            </p>
+            <p class="text-gray">
+                <a href="#" class="text-grat--link">
+                    <i class="fa fa-pencil-square-o"></i>
+                    Quản lý kết quả thi
+                </a>
+            </p>
+            <p class="text-gray">
+                <a href="javascript:void(0)" data-request="onLogout" data-request-data="redirect: '/'" class="text-grat--link">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    Đăng xuất
+                </a>
+            </p>
+        </div>
+    </div>
+</div>

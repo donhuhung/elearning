@@ -1,0 +1,19 @@
+{
+    "name": "farmmilk/store",
+    "description": "A plugin for management forum site",
+    "require": {
+    },
+    "license": "FarmMilk",
+    "authors": [
+        {
+            "name": "FarmMilk",
+            "email": "Sales@farmmilk.vn"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "classes/helpers.php"
+        ]
+    },
+    "minimum-stability": "dev"
+}

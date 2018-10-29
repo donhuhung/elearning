@@ -1,0 +1,9 @@
+title = "GoodWorks Online Academy"
+url = "/quan-ly-ngan-hang-cau-hoi/:page?|^[0-9]+$"
+layout = "default"
+is_hidden = 0
+tab="management-question-bank"
+[management_question_bank]
+pageNumber = "{{ :page }}"
+==
+{% component 'management_question_bank' %}

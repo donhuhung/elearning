@@ -1,0 +1,246 @@
+{
+  "semantics": [
+    {
+      "label": "Introduction",
+      "name": "introduction",
+      "type": "group",
+      "fields": [
+        {
+          "name": "showIntroPage",
+          "type": "boolean",
+          "optional": true,
+          "default": false,
+          "label": "Display introduction",
+          "importance": "low"
+        },
+        {
+          "name": "introductionImage",
+          "type": "image",
+          "label": "Introduction image",
+          "optional": true,
+          "widget": "showWhen",
+          "showWhen": {
+            "rules": [
+              {
+                "field": "showIntroPage",
+                "equals": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "introductionImageAltText",
+          "type": "text",
+          "label": "Alternative text for introduction image",
+          "optional": true,
+          "widget": "showWhen",
+          "showWhen": {
+            "rules": [
+              {
+                "field": "showIntroPage",
+                "equals": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "introductionTitle",
+          "type": "text",
+          "label": "Title",
+          "optional": true,
+          "widget": "showWhen",
+          "showWhen": {
+            "rules": [
+              {
+                "field": "showIntroPage",
+                "equals": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "introductionText",
+          "type": "text",
+          "label": "Introduction text",
+          "optional": true,
+          "description": "This title will be displayed above the introduction text.",
+          "widget": "showWhen",
+          "showWhen": {
+            "widget": "html",
+            "rules": [
+              {
+                "field": "showIntroPage",
+                "equals": true
+              }
+            ]
+          },
+          "tags": [
+            "sub",
+            "sup",
+            "strong",
+            "em"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Questions",
+      "name": "questions",
+      "type": "list",
+      "importance": "high",
+      "widgets": [
+        {
+          "name": "VerticalTabs",
+          "label": "Default"
+        }
+      ],
+      "min": 1,
+      "entity": "Question",
+      "field": {
+        "name": "question",
+        "type": "library",
+        "label": "Question",
+        "importance": "high",
+        "options": [
+          "H5P.SpeakTheWords 1.3"
+        ]
+      }
+    },
+    {
+      "label": "Overall Feedback",
+      "name": "overallFeedback",
+      "type": "group",
+      "expanded": true,
+      "fields": [
+        {
+          "label": "Define custom feedback for any score range",
+          "name": "overallFeedback",
+          "type": "list",
+          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+          "widgets": [
+            {
+              "name": "RangeList",
+              "label": "Default"
+            }
+          ],
+          "importance": "high",
+          "entity": "range",
+          "min": 1,
+          "defaultNum": 1,
+          "optional": true,
+          "field": {
+            "name": "overallFeedback",
+            "type": "group",
+            "importance": "low",
+            "fields": [
+              {
+                "name": "from",
+                "type": "number",
+                "label": "Score Range",
+                "min": 0,
+                "max": 100,
+                "default": 0,
+                "unit": "%"
+              },
+              {
+                "name": "to",
+                "type": "number",
+                "min": 0,
+                "max": 100,
+                "default": 100,
+                "unit": "%"
+              },
+              {
+                "name": "feedback",
+                "type": "text",
+                "label": "Feedback for defined score range",
+                "importance": "low",
+                "placeholder": "Fill in the feedback",
+                "optional": true
+              }
+            ]
+          }
+        }
+      ],
+      "importance": "low"
+    },
+    {
+      "name": "l10n",
+      "type": "group",
+      "label": "Speak The Words Set labels and texts",
+      "importance": "low",
+      "common": true,
+      "fields": [
+        {
+          "name": "introductionButtonLabel",
+          "type": "text",
+          "label": "Introduction button label",
+          "default": "Start Course!"
+        },
+        {
+          "name": "solutionScreenResultsLabel",
+          "type": "text",
+          "label": "Solution screen results label",
+          "default": "Your results:"
+        },
+        {
+          "name": "showSolutionsButtonLabel",
+          "type": "text",
+          "label": "Show solutions button label",
+          "default": "Show solution"
+        },
+        {
+          "name": "retryButtonLabel",
+          "label": "Retry button label",
+          "type": "text",
+          "default": "Retry"
+        },
+        {
+          "name": "nextQuestionAriaLabel",
+          "label": "Next question accessibility label",
+          "type": "text",
+          "default": "Next question"
+        },
+        {
+          "name": "previousQuestionAriaLabel",
+          "label": "Previous question accessibility label",
+          "type": "text",
+          "default": "Previous question"
+        },
+        {
+          "name": "navigationBarTitle",
+          "label": "Navigation bar title",
+          "description": "Titles for questions in navigation bar. \":num\" will be replaced with the actual slide number.",
+          "type": "text",
+          "default": "Slide :num"
+        },
+        {
+          "name": "answeredSlideAriaLabel",
+          "label": "Answered slide accessibility label",
+          "type": "text",
+          "default": "Answered"
+        },
+        {
+          "name": "activeSlideAriaLabel",
+          "label": "Active slide accessibility label",
+          "type": "text",
+          "default": "Currently active"
+        }
+      ]
+    }
+  ],
+  "language": null,
+  "javascript": {
+    "./lib/uploads/h5p/libraries/H5PEditor.ShowWhen-1.0/h5p-show-when.js?ver=1.0.4": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.TableList-1.0/h5p-editor-table-list.js?ver=1.0.3": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.RangeList-1.0/h5p-editor-range-list.js?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.VerticalTabs-1.3/vertical-tabs.js?ver=1.3.5": ""
+  },
+  "css": {
+    "./lib/uploads/h5p/libraries/H5PEditor.ShowWhen-1.0/h5p-show-when.css?ver=1.0.4": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.TableList-1.0/h5p-editor-table-list.css?ver=1.0.3": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.RangeList-1.0/h5p-editor-range-list.css?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/FontAwesome-4.5/h5p-font-awesome.min.css?ver=4.5.4": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.VerticalTabs-1.3/styles/css/vertical-tabs.css?ver=1.3.5": ""
+  }
+}

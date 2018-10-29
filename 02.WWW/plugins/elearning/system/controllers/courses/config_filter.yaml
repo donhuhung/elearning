@@ -1,0 +1,15 @@
+scopes:
+   
+    level:
+        label: Level
+        modelClass: Acme\BookShop\Models\Level
+        nameFrom: name
+        conditions: level_id in :filtered
+
+    subject:
+        label: subject
+        modelClass: Acme\BookShop\Models\Subject
+        nameFrom: name
+        conditions: subject_id in :filtered
+
+   

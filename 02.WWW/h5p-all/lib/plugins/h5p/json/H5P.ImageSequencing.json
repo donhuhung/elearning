@@ -1,0 +1,97 @@
+{
+  "semantics": [
+    {
+      "name": "taskDescription",
+      "type": "text",
+      "label": "Task Description",
+      "importance": "high",
+      "description": "A guide telling the user how to solve this task.",
+      "default": "Drag to arrange the images in the correct sequence"
+    },
+    {
+      "name": "sequenceImages",
+      "type": "list",
+      "label": "Images",
+      "entity": "image",
+      "importance": "high",
+      "min": 3,
+      "field": {
+        "name": "imageElement",
+        "type": "group",
+        "label": "Image Element",
+        "importance": "high",
+        "fields": [
+          {
+            "name": "image",
+            "type": "image",
+            "label": "Image",
+            "importance": "high",
+            "ratio": 1
+          },
+          {
+            "name": "imageDescription",
+            "label": "Image Description (At Max 30 char)",
+            "importance": "low",
+            "type": "text",
+            "description": "An image description if they cannot recognize the image",
+            "maxLength": 30,
+            "ratio": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "l10n",
+      "importance": "low",
+      "type": "group",
+      "label": "Localization",
+      "common": true,
+      "fields": [
+        {
+          "label": "Total Moves text",
+          "importance": "low",
+          "name": "totalMoves",
+          "type": "text",
+          "default": "Total Moves"
+        },
+        {
+          "label": "Time spent text",
+          "importance": "low",
+          "name": "timeSpent",
+          "type": "text",
+          "default": "Time spent"
+        },
+        {
+          "label": "Dropper Text",
+          "importance": "low",
+          "name": "dropperText",
+          "type": "text",
+          "default": "Please Drop"
+        },
+        {
+          "label": "Feedback text",
+          "importance": "low",
+          "name": "score",
+          "type": "text",
+          "default": "You got @score of @total points",
+          "description": "Feedback text, variables available: @score and @total. Example: 'You got @score of @total possible points'"
+        },
+        {
+          "label": "Text for \"Check\" button",
+          "importance": "low",
+          "name": "checkAnswer",
+          "type": "text",
+          "default": "Check"
+        },
+        {
+          "label": "Text for \"Retry\" button",
+          "importance": "low",
+          "name": "tryAgain",
+          "type": "text",
+          "default": "Retry"
+        }
+      ]
+    }
+  ],
+  "language": null
+}

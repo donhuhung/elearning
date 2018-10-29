@@ -1,0 +1,13 @@
+<div class="section">
+    <div class="container">
+        <div class="d-flex content_detail">
+            {% component 'sidebar_teacher' %}
+            {% partial __SELF__~'::dashboard' %}
+        </div>
+        <div class="food_content">
+            <h3 class="title_line">Khóa học phụ trách</h3>
+            {% partial __SELF__~'::courses' %}
+        </div>
+
+    </div>
+</div>

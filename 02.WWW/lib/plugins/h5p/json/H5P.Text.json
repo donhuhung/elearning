@@ -1,0 +1,24 @@
+{
+  "semantics": [
+    {
+      "name": "text",
+      "type": "text",
+      "widget": "html",
+      "importance": "high",
+      "label": "Text",
+      "enterMode": "p",
+      "tags": [
+        "strong",
+        "em",
+        "del",
+        "a",
+        "ul",
+        "ol",
+        "h2",
+        "h3",
+        "hr"
+      ]
+    }
+  ],
+  "language": null
+}

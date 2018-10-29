@@ -1,0 +1,29 @@
+{% for item in listSubjects%}
+<div class="item">
+    <div class="_content">
+        <h4 class="_title">
+            <a href="/tao-mon-hoc/{{item.id}}">
+                {{item.name}}
+            </a>
+        </h4>
+        <div class="ders">
+            <div class="pic_thumb">
+                <img src="/storage/app/media/{{item.thumbnail}}" alt="">
+            </div>
+            <p class="title_ders">
+                {{str_limit(item.description,30)|raw}}
+            </p>
+        </div>
+        <div class="link">
+            <a class="color_gray" href="/tao-mon-hoc/{{item.id}}">
+                <i class="fa fa-edit"></i>
+                Chỉnh sửa
+            </a>
+            <a class="color_blue" href="javascript:void(0)">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+                Xoá
+            </a>
+        </div>
+    </div>
+</div>
+{% endfor %}

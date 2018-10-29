@@ -1,0 +1,86 @@
+<nav aria-label="Page navigation example" class="pagination-page">
+    <ul class="pagination justify-content-center">
+        {% if galleries.currentPage == 0 %}
+            {% set currentPageNum = 1 %}
+            {% else %}
+            {% set currentPageNum = galleries.currentPage %}
+            {% endif %}
+
+            {% if galleries.currentPage > 1 %}
+            {% if currentPageNum - 1 > 0 %}
+            <li class="page-item">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): (currentPageNum - 1) }) }}" class="page-link" aria-label="Previous">
+                    <img src="{{'assets/images/arr_l.png'|theme}}" alt="">
+                </a>
+            </li>
+            {% else %}
+            <li class="page-item">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): '' }) }}" class="page-link" aria-label="Previous">
+                    <img src="{{'assets/images/arr_l.png'|theme}}" alt="">
+                </a>
+            </li>
+            {% endif %}
+            {% else %} 
+            <li class="disabled page-item">
+                <a href="javascript:void" class="page-link" aria-label="Previous">
+                    <img src="{{'assets/images/arr_l.png'|theme}}" alt="">
+                </a>
+            </li>
+            {% endif %}
+
+            {% if galleries.lastPage <= 5 %}
+            {% for page in 1..galleries.lastPage %}
+            <li class="page-item {{ galleries.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}" class="page-link">{{ page }}</a>
+            </li>
+            {% endfor %}
+            {% else %}
+            {% if galleries.currentPage > 2 %}
+            <li class="page-item">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): 1 }) }}" class="page-link">{{ 1 }}</a>
+            </li>
+            <li><span>...</span></li>
+            {% endif %}
+
+            {% if galleries.currentPage > 1 %}
+            {% set prevPage = galleries.currentPage - 1 %}
+            {% else %}
+            {% set prevPage = 1 %}
+            {% endif %}
+
+            {% if galleries.currentPage < galleries.lastPage %}
+            {% set nextPage = galleries.currentPage + 1 %}
+            {% else %}
+            {% set prevPage = galleries.currentPage - 2 %}
+            {% set nextPage = galleries.lastPage %}
+            {% endif %}
+
+            {% for page in prevPage..nextPage %}
+            <li class="page-item {{ galleries.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}" class="page-link">{{ page }}</a>
+            </li>
+            {% endfor %}
+
+            {% if galleries.currentPage < galleries.lastPage - 1 %}
+            <li><span>...</span></li>
+            <li class="page-item">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): galleries.lastPage }) }}" class="page-link">{{ galleries.lastPage }}</a>
+            </li>
+            {% endif %}
+            {% endif %}
+
+            {% if galleries.lastPage > galleries.currentPage %}
+            <li class="page-item">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): (currentPageNum + 1) }) }}" class="page-link page-link--right" aria-label="Next">
+                    <img src="{{'assets/images/arr_l.png'|theme}}" alt="">
+                </a>
+            </li>
+            {% else %}
+            <li class="disabled page-item">
+                <a href="javascript:void" class="page-link page-link--right" aria-label="Next">
+                    <img src="{{'assets/images/arr_l.png'|theme}}" alt="">
+                </a>
+            </li>
+            {% endif %}        
+    </ul>
+</nav>

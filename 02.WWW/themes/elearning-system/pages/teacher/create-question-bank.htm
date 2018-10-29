@@ -1,0 +1,16 @@
+title = "GoodWorks Online Academy"
+url = "/tao-ngan-hang-cau-hoi/:question_id?|^[0-9]+$"
+layout = "default"
+is_hidden = 0
+tab="management-question-bank"
+[management_question_bank]
+questionId = "{{ :question_id }}"
+==
+<div class="section">
+    <div class="container">
+        <div class="d-flex content_detail">
+            {% component 'sidebar_teacher' %}
+            {% component 'management_question_bank::create-bank-question' %}
+        </div>
+    </div>
+</div>

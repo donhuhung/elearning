@@ -1,0 +1,81 @@
+fields:
+    level:
+        label: 'Select Level:'
+        type: recordfinder
+        list: $/elearning/system/models/level/columns.yaml
+        prompt: 'Click the %s to find the level.'
+        nameFrom: name
+        required: true
+        span: left
+    subject:
+        label: 'Select Subject:'
+        type: recordfinder
+        list: $/elearning/system/models/subject/columns.yaml
+        prompt: 'Click the %s to find the subject.'
+        nameFrom: name
+        required: true
+        span: right
+    name:
+        label: 'Course Name:'
+        span: auto
+        required: true
+        type: text
+    teacher:
+        label: Teacher
+        nameFrom: name
+        descriptionFrom: description
+        select: name
+        span: auto
+        type: relation
+    description:
+        label: Description
+        size: large
+        span: full
+        type: richeditor
+    is_highlight:
+        label: Highlight
+        span: auto
+        type: switch
+    publish:
+        label: Publish
+        span: auto
+        default: false
+        type: checkbox
+    content:
+        label: Content
+        size: large
+        span: full
+        type: richeditor
+    total_lesson:
+        label: 'Total Lessons'
+        span: auto
+        type: text
+    total_time_learn:
+        label: 'Total Hour Learn'
+        span: auto
+        type: text
+    price:
+        label: Price
+        span: auto
+        type: text
+    discount:
+        label: Discount
+        span: auto
+        type: text
+    thumbnail:
+        label: Thumbnail
+        mode: image
+        span: auto
+        type: mediafinder
+    rating:
+        label: Rating
+        span: auto
+        type: text
+tabs:
+    fields:
+        topic:
+            label: Topics
+            type: partial
+            path: $/elearning/system/controllers/courses/fields_topics.html
+            span: auto
+            tab: Topics

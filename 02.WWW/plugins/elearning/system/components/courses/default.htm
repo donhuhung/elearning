@@ -1,0 +1,57 @@
+<div class="gray inset">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb--home breadcrumb--transparent">
+                <li class="breadcrumb-item font-weight-bold">
+                    <a href="{{url('/')}}">
+                        <img src="{{'assets/images/icon_home.png'|theme}}" alt="">
+                        Trang chủ
+                    </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Danh sách khóa học</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<div class="container">
+    <div class="d-flex d-flex--dropdown">
+        <div class="dropdown dropdown--custom">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownTopic"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Giảng viên
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownTopic">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+        <div class="dropdown dropdown--custom">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownLower"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Theo trình độ
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownLower">
+                {% for course in courses%}
+                    <a class="dropdown-item" href="#">{{course.level.name}}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% partial __SELF__~'::course-new' %}
+<div class="section">
+    <div class="container">
+        <h3 class="title_line">
+            Tất cả khóa học
+        </h3>
+        {% if courses|length > 0%}
+            <div class="list-course">
+                {% partial __SELF__~'::course-list' %}
+            </div>
+            {% if courses.lastPage > 1 %}
+                {% partial __SELF__~'::pagination' galleries = courses %}
+            {% endif %}     
+        {% endif %}     
+    </div>
+</div>

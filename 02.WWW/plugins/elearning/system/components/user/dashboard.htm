@@ -1,0 +1,32 @@
+<div class="left_content">
+    <div class="text-content">
+        <h5>Họ & tên: {{user.name}}</h5>
+        <h5>Giới tính: {{user.gender==1?'Nam'?'Nữ'}}</h5>
+        <h5>Địa chỉ: {{user.address}}</h5>
+        <h5>Số điện thoại: {{user.phone}}</h5>
+        <h5>Email: {{user.email}}</h5>
+        <h5>Ngày sinh: {{user.birthday|formatDate}}</h5>
+        <h5>Tình/Thành: {{user.province_id|formatProvince}}</h5>
+        <h5>Quận/Huyện: {{user.district_id|formatDistrict}}</h5>        
+        <h5>Mô tả về bản thân: </h5>
+        {{user.description}}
+    </div>
+    <div class="left_content--foo">
+        <div class="item">
+            <div class="card-text card-text--rating card-text--flex">
+                <p class="rating">
+                    <span class="fa fa-star checked"></span>
+                </p>
+                <p class="point">(7,949 ratings)</p>
+            </div>
+        </div>
+        <div class="item text-center line">|</div>
+        <div class="item">
+            <p class="ders">Học viên theo học: 300</p>
+        </div>
+        <div class="item text-center line">|</div>
+        <div class="item">
+            <p class="ders">Khóa học giảng dạy: 10</p>
+        </div>
+    </div>
+</div>

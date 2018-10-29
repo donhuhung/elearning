@@ -1,0 +1,1101 @@
+{
+  "semantics": [
+    {
+      "name": "presentation",
+      "type": "group",
+      "importance": "high",
+      "fields": [
+        {
+          "name": "slides",
+          "type": "list",
+          "importance": "high",
+          "field": {
+            "name": "slide",
+            "importance": "high",
+            "type": "group",
+            "fields": [
+              {
+                "name": "elements",
+                "importance": "high",
+                "type": "list",
+                "field": {
+                  "name": "element",
+                  "importance": "high",
+                  "type": "group",
+                  "fields": [
+                    {
+                      "name": "x",
+                      "importance": "low",
+                      "type": "number",
+                      "widget": "none"
+                    },
+                    {
+                      "name": "y",
+                      "importance": "low",
+                      "type": "number",
+                      "widget": "none"
+                    },
+                    {
+                      "name": "width",
+                      "importance": "low",
+                      "type": "number",
+                      "widget": "none",
+                      "optional": true
+                    },
+                    {
+                      "name": "height",
+                      "importance": "low",
+                      "type": "number",
+                      "widget": "none",
+                      "optional": true
+                    },
+                    {
+                      "name": "action",
+                      "type": "library",
+                      "importance": "high",
+                      "options": [
+                        "H5P.AdvancedText 1.1",
+                        "H5P.Link 1.3",
+                        "H5P.Image 1.0",
+                        "H5P.Video 1.4",
+                        "H5P.Audio 1.2",
+                        "H5P.Blanks 1.10",
+                        "H5P.SingleChoiceSet 1.10",
+                        "H5P.MultiChoice 1.12",
+                        "H5P.TrueFalse 1.4",
+                        "H5P.DragQuestion 1.12",
+                        "H5P.Summary 1.9",
+                        "H5P.DragText 1.7",
+                        "H5P.MarkTheWords 1.8",
+                        "H5P.Dialogcards 1.6",
+                        "H5P.ContinuousText 1.2",
+                        "H5P.ExportableTextArea 1.2",
+                        "H5P.Table 1.1",
+                        "H5P.InteractiveVideo 1.19",
+                        "H5P.TwitterUserFeed 1.0"
+                      ],
+                      "optional": true
+                    },
+                    {
+                      "name": "solution",
+                      "type": "text",
+                      "widget": "html",
+                      "optional": true,
+                      "label": "Comments",
+                      "importance": "low",
+                      "description": "The comments are shown when the user displays the suggested answers for all slides.",
+                      "enterMode": "p",
+                      "tags": [
+                        "strong",
+                        "em",
+                        "del",
+                        "a",
+                        "ul",
+                        "ol",
+                        "h2",
+                        "h3",
+                        "hr"
+                      ]
+                    },
+                    {
+                      "name": "alwaysDisplayComments",
+                      "type": "boolean",
+                      "label": "Always display comments",
+                      "importance": "low",
+                      "optional": true
+                    },
+                    {
+                      "name": "backgroundOpacity",
+                      "type": "number",
+                      "label": "Background Opacity",
+                      "importance": "low",
+                      "min": 0,
+                      "max": 100,
+                      "step": 5,
+                      "default": 0,
+                      "optional": true
+                    },
+                    {
+                      "name": "displayAsButton",
+                      "type": "boolean",
+                      "label": "Display as button",
+                      "importance": "medium",
+                      "default": false,
+                      "optional": true
+                    },
+                    {
+                      "name": "buttonSize",
+                      "type": "select",
+                      "label": "Button size",
+                      "importance": "low",
+                      "optional": false,
+                      "default": "big",
+                      "options": [
+                        {
+                          "value": "small",
+                          "label": "Small"
+                        },
+                        {
+                          "value": "big",
+                          "label": "Big"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "title",
+                      "type": "text",
+                      "optional": true,
+                      "label": "Title",
+                      "importance": "medium"
+                    },
+                    {
+                      "name": "goToSlideType",
+                      "type": "select",
+                      "label": "Go to",
+                      "importance": "medium",
+                      "optional": false,
+                      "options": [
+                        {
+                          "value": "specified",
+                          "label": "Specific slide number"
+                        },
+                        {
+                          "value": "next",
+                          "label": "Next slide"
+                        },
+                        {
+                          "value": "previous",
+                          "label": "Previous slide"
+                        }
+                      ],
+                      "default": "specified"
+                    },
+                    {
+                      "name": "goToSlide",
+                      "type": "number",
+                      "label": "Specific slide number",
+                      "description": "Only applicable when 'Specific slide number' is selected",
+                      "importance": "low",
+                      "min": 1,
+                      "optional": true
+                    },
+                    {
+                      "name": "invisible",
+                      "type": "boolean",
+                      "label": "Invisible",
+                      "importance": "low",
+                      "description": "Default cursor, no title and no tab index. Warning: Users with disabilities or keyboard only users will have trouble using this element.",
+                      "default": false
+                    },
+                    {
+                      "name": "metadata",
+                      "type": "group",
+                      "label": "Metadata",
+                      "importance": "low",
+                      "optional": true,
+                      "deprecated": true,
+                      "fields": [
+                        {
+                          "name": "title",
+                          "type": "text",
+                          "optional": true,
+                          "label": "Title"
+                        },
+                        {
+                          "name": "author",
+                          "type": "text",
+                          "optional": true,
+                          "label": "Author"
+                        },
+                        {
+                          "name": "lisence",
+                          "type": "text",
+                          "optional": true,
+                          "label": "License"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "keywords",
+                "importance": "low",
+                "type": "list",
+                "optional": true,
+                "field": {
+                  "name": "keyword",
+                  "importance": "low",
+                  "type": "group",
+                  "optional": true,
+                  "fields": [
+                    {
+                      "name": "main",
+                      "importance": "low",
+                      "type": "text",
+                      "optional": true
+                    },
+                    {
+                      "name": "subs",
+                      "importance": "low",
+                      "type": "list",
+                      "optional": true,
+                      "field": {
+                        "name": "keyword",
+                        "importance": "low",
+                        "type": "text"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "slideBackgroundSelector",
+                "importance": "medium",
+                "type": "group",
+                "widget": "radioSelector",
+                "fields": [
+                  {
+                    "name": "imageSlideBackground",
+                    "type": "image",
+                    "label": "Image",
+                    "importance": "medium",
+                    "optional": true,
+                    "description": "Image background should have a 2:1 width to height ratio to avoid stretching. High resolution images will display better on larger screens."
+                  },
+                  {
+                    "name": "fillSlideBackground",
+                    "importance": "medium",
+                    "type": "text",
+                    "widget": "colorSelector",
+                    "label": "Pick a color",
+                    "spectrum": {
+                      "flat": true,
+                      "showInput": true,
+                      "allowEmpty": true,
+                      "showButtons": false
+                    },
+                    "default": null,
+                    "optional": true
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "ct",
+          "importance": "low",
+          "type": "text",
+          "widget": "none",
+          "optional": true,
+          "tags": [
+            "strong",
+            "em",
+            "del",
+            "br",
+            "p",
+            "a",
+            "h2",
+            "h3"
+          ]
+        },
+        {
+          "name": "keywordListEnabled",
+          "type": "boolean",
+          "label": "Keyword list",
+          "importance": "low",
+          "default": true
+        },
+        {
+          "name": "keywordListAlwaysShow",
+          "type": "boolean",
+          "label": "Always show",
+          "importance": "low",
+          "default": false
+        },
+        {
+          "name": "keywordListAutoHide",
+          "type": "boolean",
+          "label": "Auto hide",
+          "importance": "low",
+          "default": false
+        },
+        {
+          "name": "keywordListOpacity",
+          "type": "number",
+          "label": "Opacity",
+          "importance": "low",
+          "min": 0,
+          "max": 100,
+          "default": 90
+        },
+        {
+          "name": "globalBackgroundSelector",
+          "importance": "medium",
+          "type": "group",
+          "widget": "radioSelector",
+          "fields": [
+            {
+              "name": "imageGlobalBackground",
+              "type": "image",
+              "label": "Image",
+              "importance": "medium",
+              "optional": true,
+              "description": "Image background should have a 2:1 width to height ratio to avoid stretching. High resolution images will display better on larger screens."
+            },
+            {
+              "name": "fillGlobalBackground",
+              "type": "text",
+              "widget": "colorSelector",
+              "label": "Pick a color",
+              "importance": "medium",
+              "spectrum": {
+                "flat": true,
+                "showInput": true,
+                "allowEmpty": true,
+                "showButtons": false
+              },
+              "default": null,
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "widget": "coursepresentation"
+    },
+    {
+      "name": "l10n",
+      "type": "group",
+      "label": "Localize",
+      "importance": "low",
+      "common": true,
+      "fields": [
+        {
+          "name": "slide",
+          "type": "text",
+          "label": "Translation for \"Slide\"",
+          "importance": "low",
+          "default": "Slide"
+        },
+        {
+          "name": "score",
+          "type": "text",
+          "label": "Translation for \"Score\"",
+          "importance": "low",
+          "default": "Score"
+        },
+        {
+          "name": "yourScore",
+          "type": "text",
+          "label": "Translation for \"Your Score\"",
+          "importance": "low",
+          "default": "Your Score"
+        },
+        {
+          "name": "maxScore",
+          "type": "text",
+          "label": "Translation for \"Max Score\"",
+          "importance": "low",
+          "default": "Max Score"
+        },
+        {
+          "name": "goodScore",
+          "type": "text",
+          "label": "Greeting given for GOOD score",
+          "importance": "low",
+          "default": "Congratulations! You got @percent correct!",
+          "description": "@percent is replaced by the real user score in percent"
+        },
+        {
+          "name": "okScore",
+          "type": "text",
+          "label": "Greeting given for OK score",
+          "importance": "low",
+          "default": "Nice effort! You got @percent correct!",
+          "description": "@percent is replaced by the real user score in percent"
+        },
+        {
+          "name": "badScore",
+          "type": "text",
+          "label": "Greeting given for BAD score",
+          "importance": "low",
+          "default": "You got @percent correct.",
+          "description": "@percent is replaced by the real user score in percent"
+        },
+        {
+          "name": "total",
+          "type": "text",
+          "label": "Translation for \"Total\"",
+          "importance": "low",
+          "default": "Total"
+        },
+        {
+          "name": "totalScore",
+          "type": "text",
+          "label": "Translation for \"Total Score\"",
+          "importance": "low",
+          "default": "Total Score"
+        },
+        {
+          "name": "showSolutions",
+          "type": "text",
+          "label": "Title for show solutions button",
+          "importance": "low",
+          "default": "Show solutions"
+        },
+        {
+          "name": "retry",
+          "type": "text",
+          "label": "Text for the retry button",
+          "importance": "low",
+          "default": "Retry",
+          "optional": true
+        },
+        {
+          "name": "title",
+          "type": "text",
+          "label": "Translation for \"Title\"",
+          "importance": "low",
+          "default": "Title"
+        },
+        {
+          "name": "author",
+          "type": "text",
+          "label": "Translation for \"Author/supplier\"",
+          "importance": "low",
+          "default": "Author"
+        },
+        {
+          "name": "lisence",
+          "type": "text",
+          "label": "Translation for \"License\"",
+          "importance": "low",
+          "default": "License",
+          "deprecated": true,
+          "optional": true
+        },
+        {
+          "name": "license",
+          "type": "text",
+          "label": "Translation for \"License\"",
+          "importance": "low",
+          "default": "License"
+        },
+        {
+          "name": "exportAnswers",
+          "type": "text",
+          "label": "Text for the export text button",
+          "importance": "low",
+          "default": "Export text"
+        },
+        {
+          "name": "copyright",
+          "type": "text",
+          "label": "Text for the \"Rights of use\" button",
+          "importance": "low",
+          "default": "Rights of use"
+        },
+        {
+          "name": "hideKeywords",
+          "type": "text",
+          "label": "Hide keywords list button title",
+          "importance": "low",
+          "default": "Hide keywords list"
+        },
+        {
+          "name": "showKeywords",
+          "type": "text",
+          "label": "Show keywords list button title",
+          "importance": "low",
+          "default": "Show keywords list"
+        },
+        {
+          "name": "fullscreen",
+          "type": "text",
+          "label": "Fullscreen label",
+          "importance": "low",
+          "default": "Fullscreen"
+        },
+        {
+          "name": "exitFullscreen",
+          "type": "text",
+          "label": "Exit fullscreen label",
+          "importance": "low",
+          "default": "Exit fullscreen"
+        },
+        {
+          "name": "prevSlide",
+          "type": "text",
+          "label": "Previous slide label",
+          "importance": "low",
+          "default": "Previous slide"
+        },
+        {
+          "name": "nextSlide",
+          "type": "text",
+          "label": "Next slide label",
+          "importance": "low",
+          "default": "Next slide"
+        },
+        {
+          "name": "currentSlide",
+          "type": "text",
+          "label": "Current slide label",
+          "importance": "low",
+          "default": "Current slide"
+        },
+        {
+          "name": "lastSlide",
+          "type": "text",
+          "label": "Last slide label",
+          "importance": "low",
+          "default": "Last slide"
+        },
+        {
+          "name": "solutionModeTitle",
+          "type": "text",
+          "label": "Exit solution mode text",
+          "importance": "low",
+          "default": "Exit solution mode"
+        },
+        {
+          "name": "solutionModeText",
+          "type": "text",
+          "label": "Solution mode text",
+          "importance": "low",
+          "default": "Solution Mode"
+        },
+        {
+          "name": "summaryMultipleTaskText",
+          "type": "text",
+          "label": "Text when multiple tasks on a page",
+          "importance": "low",
+          "default": "Multiple tasks"
+        },
+        {
+          "name": "scoreMessage",
+          "type": "text",
+          "label": "Score message text",
+          "importance": "low",
+          "default": "You achieved:"
+        },
+        {
+          "name": "shareFacebook",
+          "type": "text",
+          "label": "Share to Facebook text",
+          "importance": "low",
+          "default": "Share on Facebook"
+        },
+        {
+          "name": "shareTwitter",
+          "type": "text",
+          "label": "Share to Twitter text",
+          "importance": "low",
+          "default": "Share on Twitter"
+        },
+        {
+          "name": "shareGoogle",
+          "type": "text",
+          "label": "Share to Google text",
+          "importance": "low",
+          "default": "Share on Google+"
+        },
+        {
+          "name": "summary",
+          "type": "text",
+          "label": "Title for summary slide",
+          "importance": "low",
+          "default": "Summary"
+        },
+        {
+          "name": "solutionsButtonTitle",
+          "type": "text",
+          "label": "Title for the comments icon",
+          "importance": "low",
+          "default": "Show comments"
+        },
+        {
+          "name": "printTitle",
+          "type": "text",
+          "label": "Title for print button",
+          "importance": "low",
+          "default": "Print"
+        },
+        {
+          "name": "printIngress",
+          "type": "text",
+          "label": "Print dialog ingress",
+          "importance": "low",
+          "default": "How would you like to print this presentation?"
+        },
+        {
+          "name": "printAllSlides",
+          "type": "text",
+          "label": "Label for \"Print all slides\" button",
+          "importance": "low",
+          "default": "Print all slides"
+        },
+        {
+          "name": "printCurrentSlide",
+          "type": "text",
+          "label": "Label for \"Print current slide\" button",
+          "importance": "low",
+          "default": "Print current slide"
+        },
+        {
+          "name": "noTitle",
+          "type": "text",
+          "label": "Label for slides without a title",
+          "importance": "low",
+          "default": "No title"
+        },
+        {
+          "name": "accessibilitySlideNavigationExplanation",
+          "type": "text",
+          "label": "Explanation of slide navigation for assistive technologies",
+          "importance": "low",
+          "default": "Use left and right arrow to change slide in that direction whenever canvas is selected."
+        },
+        {
+          "name": "accessibilityCanvasLabel",
+          "type": "text",
+          "label": "Canvas label for assistive technologies",
+          "importance": "low",
+          "default": "Presentation canvas. Use left and right arrow to move between slides."
+        },
+        {
+          "name": "containsNotCompleted",
+          "type": "text",
+          "label": "Label for uncompleted interactions",
+          "importance": "low",
+          "default": "@slideName contains not completed interaction"
+        },
+        {
+          "name": "containsCompleted",
+          "type": "text",
+          "label": "Label for completed interactions",
+          "importance": "low",
+          "default": "@slideName contains completed interaction"
+        },
+        {
+          "name": "slideCount",
+          "type": "text",
+          "label": "Label for slide counter. Variables are @index, @total",
+          "importance": "low",
+          "default": "Slide @index of @total"
+        },
+        {
+          "name": "containsOnlyCorrect",
+          "type": "text",
+          "label": "Label for slides that only contains correct answers",
+          "importance": "low",
+          "default": "@slideName only has correct answers"
+        },
+        {
+          "name": "containsIncorrectAnswers",
+          "type": "text",
+          "label": "Label for slides that has incorrect answers",
+          "importance": "low",
+          "default": "@slideName has incorrect answers"
+        },
+        {
+          "name": "shareResult",
+          "type": "text",
+          "label": "Label for social sharing bar",
+          "importance": "low",
+          "default": "Share Result"
+        },
+        {
+          "name": "accessibilityTotalScore",
+          "type": "text",
+          "label": "Total score announcement for assistive technologies",
+          "default": "You got @score of @maxScore points in total",
+          "description": "Available variables are @score and @maxScore"
+        }
+      ]
+    },
+    {
+      "name": "override",
+      "type": "group",
+      "label": "Behaviour settings.",
+      "importance": "low",
+      "description": "These options will let you override behaviour settings.",
+      "optional": true,
+      "fields": [
+        {
+          "name": "activeSurface",
+          "type": "boolean",
+          "widget": "disposableBoolean",
+          "label": "Activate Active Surface Mode",
+          "importance": "low",
+          "description": "Removes navigation controls for the end user. Use Go To Slide to navigate.",
+          "default": false
+        },
+        {
+          "name": "hideSummarySlide",
+          "type": "boolean",
+          "label": "Hide Summary Slide",
+          "importance": "low",
+          "description": "Hides the summary slide.",
+          "default": false
+        },
+        {
+          "name": "showSolutionButton",
+          "type": "select",
+          "label": "Override \"Show Solution\" button",
+          "importance": "low",
+          "description": "This option determines if the \"Show Solution\" button will be configured for each question individually (default) shown for all questions (Enabled) or disabled for all questions (Disabled) ",
+          "optional": true,
+          "options": [
+            {
+              "value": "on",
+              "label": "Enabled"
+            },
+            {
+              "value": "off",
+              "label": "Disabled"
+            }
+          ]
+        },
+        {
+          "name": "retryButton",
+          "type": "select",
+          "label": "Override \"Retry\" button",
+          "importance": "low",
+          "description": "This option determines if the \"Retry\" button will be configured for each question individually (default) shown for all questions (Enabled) or disabled for all questions (Disabled)",
+          "optional": true,
+          "options": [
+            {
+              "value": "on",
+              "label": "Enabled"
+            },
+            {
+              "value": "off",
+              "label": "Disabled"
+            }
+          ]
+        },
+        {
+          "name": "enablePrintButton",
+          "type": "boolean",
+          "label": "Enable print button",
+          "importance": "low",
+          "description": "Enables the print button.",
+          "default": false
+        },
+        {
+          "name": "social",
+          "type": "group",
+          "label": "Social Settings",
+          "widget": "showWhen",
+          "showWhen": {
+            "rules": [
+              {
+                "field": "hideSummarySlide",
+                "equals": false
+              }
+            ]
+          },
+          "importance": "low",
+          "description": "These options will let you override social behaviour settings. Empty values will be filled in automatically if a link is provided, otherwise all values will be generated.",
+          "optional": true,
+          "fields": [
+            {
+              "name": "showFacebookShare",
+              "type": "boolean",
+              "label": "Display Facebook share icon",
+              "importance": "low",
+              "default": true
+            },
+            {
+              "name": "facebookShare",
+              "importance": "low",
+              "type": "group",
+              "expanded": true,
+              "label": "Facebook share settings",
+              "widget": "showWhen",
+              "showWhen": {
+                "rules": [
+                  {
+                    "field": "showFacebookShare",
+                    "equals": true
+                  }
+                ]
+              },
+              "fields": [
+                {
+                  "name": "url",
+                  "type": "text",
+                  "label": "Share to Facebook link",
+                  "importance": "low",
+                  "default": "@currentpageurl"
+                },
+                {
+                  "name": "quote",
+                  "type": "text",
+                  "label": "Share to Facebook quote",
+                  "importance": "low",
+                  "default": "I scored @score out of @maxScore on a task at @currentpageurl."
+                }
+              ]
+            },
+            {
+              "name": "showTwitterShare",
+              "type": "boolean",
+              "label": "Display Twitter share icon",
+              "importance": "low",
+              "default": false
+            },
+            {
+              "name": "twitterShare",
+              "importance": "low",
+              "type": "group",
+              "expanded": true,
+              "label": "Twitter share settings",
+              "widget": "showWhen",
+              "showWhen": {
+                "rules": [
+                  {
+                    "field": "showTwitterShare",
+                    "equals": true
+                  }
+                ]
+              },
+              "fields": [
+                {
+                  "name": "statement",
+                  "type": "text",
+                  "label": "Share to Twitter statement",
+                  "importance": "low",
+                  "default": "I scored @score out of @maxScore on a task at @currentpageurl."
+                },
+                {
+                  "name": "url",
+                  "type": "text",
+                  "label": "Share to Twitter link",
+                  "importance": "low",
+                  "default": "@currentpageurl"
+                },
+                {
+                  "name": "hashtags",
+                  "type": "text",
+                  "label": "Share to Twitter hashtags",
+                  "importance": "low",
+                  "default": "h5p, course"
+                }
+              ]
+            },
+            {
+              "name": "showGoogleShare",
+              "type": "boolean",
+              "label": "Display Google+ share icon",
+              "importance": "low",
+              "default": false
+            },
+            {
+              "name": "googleShareUrl",
+              "type": "text",
+              "label": "Share to Google link",
+              "importance": "low",
+              "default": "@currentpageurl",
+              "widget": "showWhen",
+              "showWhen": {
+                "rules": [
+                  {
+                    "field": "showGoogleShare",
+                    "equals": true
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "language": null,
+  "javascript": {
+    "./lib/uploads/h5p/libraries/H5PEditor.RadioGroup-1.1/radio-group.js?ver=1.1.2": "",
+    "./lib/uploads/h5p/libraries/H5P.AdvancedText-1.1/text.js?ver=1.1.5": "",
+    "./lib/uploads/h5p/libraries/Tether-1.0/scripts/tether.min.js?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/Drop-1.0/js/drop.min.js?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/H5P.Transition-1.0/transition.js?ver=1.0.4": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-help-dialog.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-message-dialog.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-progress-circle.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-simple-rounded-button.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-speech-bubble.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-throbber.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-tip.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-slider.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-score-bar.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-progressbar.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-ui.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.Question-1.4/scripts/question.js?ver=1.4.2": "",
+    "./lib/uploads/h5p/libraries/H5P.Question-1.4/scripts/explainer.js?ver=1.4.2": "",
+    "./lib/uploads/h5p/libraries/H5P.Question-1.4/scripts/score-points.js?ver=1.4.2": "",
+    "./lib/uploads/h5p/libraries/H5P.TextUtilities-1.3/scripts/text-utilities.js?ver=1.3.0": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.TableList-1.0/h5p-editor-table-list.js?ver=1.0.3": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.RangeList-1.0/h5p-editor-range-list.js?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/H5P.Blanks-1.10/js/blanks.js?ver=1.10.1": "",
+    "./lib/uploads/h5p/libraries/H5P.Blanks-1.10/js/cloze.js?ver=1.10.1": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNDrop-1.1/drag-n-drop.js?ver=1.1.5": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNResize-1.2/H5P.DragNResize.js?ver=1.2.5": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNBar-1.4/scripts/drag-n-bar.js?ver=1.4.8": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNBar-1.4/scripts/context-menu.js?ver=1.4.8": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNBar-1.4/scripts/dialog.js?ver=1.4.8": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNBar-1.4/scripts/drag-n-bar-element.js?ver=1.4.8": "",
+    "./lib/uploads/h5p/libraries/jQuery.ui-1.10/h5p-jquery-ui.js?ver=1.10.19": "",
+    "./lib/uploads/h5p/libraries/H5P.Image-1.0/image.js?ver=1.0.32": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.Wizard-1.2/Scripts/Wizard.js?ver=1.2.4": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.DragQuestion-1.9/H5PEditor.DragQuestion.js?ver=1.9.5": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.DragQuestion-1.9/H5PEditor.DynamicCheckboxes.js?ver=1.9.5": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.ShowWhen-1.0/h5p-show-when.js?ver=1.0.4": "",
+    "./lib/uploads/h5p/libraries/H5P.DragQuestion-1.12/h5p-drag-question.js?ver=1.12.0": "",
+    "./lib/uploads/h5p/libraries/H5P.DragText-1.7/dist/h5p-drag-text.js?ver=1.7.1": "",
+    "./lib/uploads/h5p/libraries/flowplayer-1.0/scripts/flowplayer-3.2.12.min.js?ver=1.0.5": "",
+    "./lib/uploads/h5p/libraries/H5P.Video-1.4/scripts/youtube.js?ver=1.4.2": "",
+    "./lib/uploads/h5p/libraries/H5P.Video-1.4/scripts/html5.js?ver=1.4.2": "",
+    "./lib/uploads/h5p/libraries/H5P.Video-1.4/scripts/flash.js?ver=1.4.2": "",
+    "./lib/uploads/h5p/libraries/H5P.Video-1.4/scripts/video.js?ver=1.4.2": "",
+    "./lib/uploads/h5p/libraries/H5P.CKEditor-1.0/h5p-ckeditor.js?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/H5P.FreeTextQuestion-1.0/h5p-free-text-question.js?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.Timecode-1.2/timecode.js?ver=1.2.3": "",
+    "./lib/uploads/h5p/libraries/H5P.GoToQuestion-1.3/scripts/go-to-question.js?ver=1.3.4": "",
+    "./lib/uploads/h5p/libraries/Shepherd-1.0/scripts/shepherd.js?ver=1.0.3": "",
+    "./lib/uploads/h5p/libraries/H5P.GuidedTour-1.0/scripts/h5p-guided-tour.js?ver=1.0.5": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.UrlField-1.2/link-widget.js?ver=1.2.1": "",
+    "./lib/uploads/h5p/libraries/H5P.Link-1.3/link.js?ver=1.3.6": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.ColorSelector-1.2/scripts/spectrum.js?ver=1.2.3": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.ColorSelector-1.2/scripts/color-selector.js?ver=1.2.3": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.SelectToggleFields-1.1/select-toggle-fields.js?ver=1.1.0": "",
+    "./lib/uploads/h5p/libraries/H5P.IVHotspot-1.2/scripts/iv-hotspot.js?ver=1.2.5": "",
+    "./lib/uploads/h5p/libraries/H5P.MarkTheWords-1.8/scripts/keyboard-nav.js?ver=1.8.0": "",
+    "./lib/uploads/h5p/libraries/H5P.MarkTheWords-1.8/scripts/xAPI-generator.js?ver=1.8.0": "",
+    "./lib/uploads/h5p/libraries/H5P.MarkTheWords-1.8/scripts/word.js?ver=1.8.0": "",
+    "./lib/uploads/h5p/libraries/H5P.MarkTheWords-1.8/scripts/mark-the-words.js?ver=1.8.0": "",
+    "./lib/uploads/h5p/libraries/EmbeddedJS-1.0/js/ejs_production.js?ver=1.0.4": "",
+    "./lib/uploads/h5p/libraries/EmbeddedJS-1.0/js/ejs_viewhelpers.js?ver=1.0.4": "",
+    "./lib/uploads/h5p/libraries/H5P.MultiChoice-1.12/js/multichoice.js?ver=1.12.0": "",
+    "./lib/uploads/h5p/libraries/H5P.OpenEndedQuestion-1.0/dist/dist.js?ver=1.0.9": "",
+    "./lib/uploads/h5p/libraries/H5P.SimpleMultiChoice-1.1/dist/dist.js?ver=1.1.6": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.VerticalTabs-1.3/vertical-tabs.js?ver=1.3.5": "",
+    "./lib/uploads/h5p/libraries/H5P.Questionnaire-1.2/dist/dist.js?ver=1.2.6": "",
+    "./lib/uploads/h5p/libraries/H5P.SoundJS-1.0/soundjs-0.6.2.min.js?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.SingleChoiceSetTextualEditor-1.0/h5peditor-ssc-editor.js?ver=1.0.0": "",
+    "./lib/uploads/h5p/libraries/H5P.SingleChoiceSet-1.10/scripts/stop-watch.js?ver=1.10.1": "",
+    "./lib/uploads/h5p/libraries/H5P.SingleChoiceSet-1.10/scripts/sound-effects.js?ver=1.10.1": "",
+    "./lib/uploads/h5p/libraries/H5P.SingleChoiceSet-1.10/scripts/xapi-event-builder.js?ver=1.10.1": "",
+    "./lib/uploads/h5p/libraries/H5P.SingleChoiceSet-1.10/scripts/result-slide.js?ver=1.10.1": "",
+    "./lib/uploads/h5p/libraries/H5P.SingleChoiceSet-1.10/scripts/solution-view.js?ver=1.10.1": "",
+    "./lib/uploads/h5p/libraries/H5P.SingleChoiceSet-1.10/scripts/single-choice-alternative.js?ver=1.10.1": "",
+    "./lib/uploads/h5p/libraries/H5P.SingleChoiceSet-1.10/scripts/single-choice.js?ver=1.10.1": "",
+    "./lib/uploads/h5p/libraries/H5P.SingleChoiceSet-1.10/scripts/single-choice-set.js?ver=1.10.1": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.SummaryTextualEditor-1.1/summary-textual-editor.js?ver=1.1.1": "",
+    "./lib/uploads/h5p/libraries/H5P.Summary-1.9/js/stop-watch.js?ver=1.9.0": "",
+    "./lib/uploads/h5p/libraries/H5P.Summary-1.9/js/xapi-event-builder.js?ver=1.9.0": "",
+    "./lib/uploads/h5p/libraries/H5P.Summary-1.9/js/summary.js?ver=1.9.0": "",
+    "./lib/uploads/h5p/libraries/H5P.Table-1.1/scripts/table.js?ver=1.1.7": "",
+    "./lib/uploads/h5p/libraries/H5P.Text-1.1/scripts/text.js?ver=1.1.8": "",
+    "./lib/uploads/h5p/libraries/H5P.TrueFalse-1.4/scripts/h5p-true-false.js?ver=1.4.1": "",
+    "./lib/uploads/h5p/libraries/H5P.TrueFalse-1.4/scripts/h5p-true-false-answer-group.js?ver=1.4.1": "",
+    "./lib/uploads/h5p/libraries/H5P.TrueFalse-1.4/scripts/h5p-true-false-answer.js?ver=1.4.1": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.Duration-1.1/scripts/duration.js?ver=1.1.2": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.InteractiveVideo-1.19/Scripts/image-radio-button-group.js?ver=1.19.3": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.InteractiveVideo-1.19/Scripts/interactive-video-editor.js?ver=1.19.3": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.InteractiveVideo-1.19/Scripts/guided-tours.js?ver=1.19.3": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.InteractiveVideo-1.19/Scripts/require-completion.js?ver=1.19.3": "",
+    "./lib/uploads/h5p/libraries/H5P.InteractiveVideo-1.19/dist/h5p-interactive-video.js?ver=1.19.4": "",
+    "./lib/uploads/h5p/libraries/H5P.AppearIn-1.0/h5p-appear-in.js?ver=1.0.9": "",
+    "./lib/uploads/h5p/libraries/H5P.Audio-1.2/scripts/audio.js?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.ContinuousText-1.2/scripts/ct.js?ver=1.2.9": "",
+    "./lib/uploads/h5p/libraries/H5P.CoursePresentation-1.19/dist/h5p-course-presentation.js?ver=1.19.3": "",
+    "./lib/uploads/h5p/libraries/H5P.Dialogcards-1.6/js/dialogcards.js?ver=1.6.4": "",
+    "./lib/uploads/h5p/libraries/swfobject-1.0/scripts/swfobject.js?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/downloadify-1.0/scripts/downloadify.js?ver=1.0.3": "",
+    "./lib/uploads/h5p/libraries/blob-1.0/scripts/Blob.js?ver=1.0.6": "",
+    "./lib/uploads/h5p/libraries/filesaver-1.0/scripts/FileSaver.js?ver=1.0.6": "",
+    "./lib/uploads/h5p/libraries/H5P.ExportableTextArea-1.2/scripts/eta.js?ver=1.2.9": "",
+    "./lib/uploads/h5p/libraries/H5P.TwitterUserFeed-1.0/twitter-user-feed.js?ver=1.0.12": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.RadioSelector-1.2/radio-selector.js?ver=1.2.1": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.CoursePresentation-1.19/scripts/disposable-boolean.js?ver=1.19.1": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.CoursePresentation-1.19/scripts/cp-editor.js?ver=1.19.1": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.CoursePresentation-1.19/scripts/slide-selector.js?ver=1.19.1": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.CoursePresentation-1.19/scripts/bg-selector.js?ver=1.19.1": ""
+  },
+  "css": {
+    "./lib/uploads/h5p/libraries/H5PEditor.RadioGroup-1.1/radio-group.css?ver=1.1.2": "",
+    "./lib/uploads/h5p/libraries/FontAwesome-4.5/h5p-font-awesome.min.css?ver=4.5.4": "",
+    "./lib/uploads/h5p/libraries/H5P.AdvancedText-1.1/text.css?ver=1.1.5": "",
+    "./lib/uploads/h5p/libraries/Tether-1.0/styles/tether.min.css?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/Drop-1.0/css/drop-theme-arrows-bounce.min.css?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/H5P.FontIcons-1.0/styles/h5p-font-icons.css?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-help-dialog.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-message-dialog.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-progress-circle.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-simple-rounded-button.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-speech-bubble.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-tip.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-slider.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-score-bar.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-progressbar.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-ui.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-icon.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.Question-1.4/styles/question.css?ver=1.4.2": "",
+    "./lib/uploads/h5p/libraries/H5P.Question-1.4/styles/explainer.css?ver=1.4.2": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.TableList-1.0/h5p-editor-table-list.css?ver=1.0.3": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.RangeList-1.0/h5p-editor-range-list.css?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/H5P.Blanks-1.10/css/blanks.css?ver=1.10.1": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNResize-1.2/H5P.DragNResize.css?ver=1.2.5": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNBar-1.4/styles/drag-n-bar.css?ver=1.4.8": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNBar-1.4/styles/dialog.css?ver=1.4.8": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNBar-1.4/styles/context-menu.css?ver=1.4.8": "",
+    "./lib/uploads/h5p/libraries/jQuery.ui-1.10/h5p-jquery-ui.css?ver=1.10.19": "",
+    "./lib/uploads/h5p/libraries/H5P.Image-1.0/image.css?ver=1.0.32": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.Wizard-1.2/Styles/Wizard.css?ver=1.2.4": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.DragQuestion-1.9/H5PEditor.DragQuestion.css?ver=1.9.5": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.ShowWhen-1.0/h5p-show-when.css?ver=1.0.4": "",
+    "./lib/uploads/h5p/libraries/H5P.DragQuestion-1.12/css/dragquestion.css?ver=1.12.0": "",
+    "./lib/uploads/h5p/libraries/H5P.DragText-1.7/dist/h5p-drag-text.css?ver=1.7.1": "",
+    "./lib/uploads/h5p/libraries/H5P.Video-1.4/styles/video.css?ver=1.4.2": "",
+    "./lib/uploads/h5p/libraries/H5P.FreeTextQuestion-1.0/h5p-free-text-question.css?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.Timecode-1.2/timecode.css?ver=1.2.3": "",
+    "./lib/uploads/h5p/libraries/H5P.GoToQuestion-1.3/styles/go-to-question.css?ver=1.3.4": "",
+    "./lib/uploads/h5p/libraries/Shepherd-1.0/styles/shepherd-theme-arrows.css?ver=1.0.3": "",
+    "./lib/uploads/h5p/libraries/H5P.GuidedTour-1.0/styles/h5p-guided-tour.css?ver=1.0.5": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.UrlField-1.2/link-widget.css?ver=1.2.1": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.ColorSelector-1.2/styles/spectrum.css?ver=1.2.3": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.ColorSelector-1.2/styles/color-selector.css?ver=1.2.3": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.SelectToggleFields-1.1/select-toggle-fields.css?ver=1.1.0": "",
+    "./lib/uploads/h5p/libraries/H5P.IVHotspot-1.2/styles/iv-hotspot.css?ver=1.2.5": "",
+    "./lib/uploads/h5p/libraries/H5P.MarkTheWords-1.8/styles/mark-the-words.css?ver=1.8.0": "",
+    "./lib/uploads/h5p/libraries/H5P.MultiChoice-1.12/css/multichoice.css?ver=1.12.0": "",
+    "./lib/uploads/h5p/libraries/H5P.OpenEndedQuestion-1.0/dist/styles.css?ver=1.0.9": "",
+    "./lib/uploads/h5p/libraries/H5P.SimpleMultiChoice-1.1/dist/styles.css?ver=1.1.6": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.VerticalTabs-1.3/styles/css/vertical-tabs.css?ver=1.3.5": "",
+    "./lib/uploads/h5p/libraries/H5P.Questionnaire-1.2/dist/styles.css?ver=1.2.6": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.SingleChoiceSetTextualEditor-1.0/h5peditor-ssc-editor.css?ver=1.0.0": "",
+    "./lib/uploads/h5p/libraries/H5P.SingleChoiceSet-1.10/styles/single-choice-set.css?ver=1.10.1": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.SummaryTextualEditor-1.1/styles/H5PEditor.SummaryTextualEditor.css?ver=1.1.1": "",
+    "./lib/uploads/h5p/libraries/H5P.Summary-1.9/css/summary.css?ver=1.9.0": "",
+    "./lib/uploads/h5p/libraries/H5P.Table-1.1/styles/table.css?ver=1.1.7": "",
+    "./lib/uploads/h5p/libraries/H5P.Text-1.1/styles/text.css?ver=1.1.8": "",
+    "./lib/uploads/h5p/libraries/H5P.TrueFalse-1.4/styles/h5p-true-false.css?ver=1.4.1": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.Duration-1.1/styles/duration.css?ver=1.1.2": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.InteractiveVideo-1.19/styles/image-radio-button-group.css?ver=1.19.3": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.InteractiveVideo-1.19/styles/interactive-video-editor.css?ver=1.19.3": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.InteractiveVideo-1.19/styles/require-completion.css?ver=1.19.3": "",
+    "./lib/uploads/h5p/libraries/H5P.InteractiveVideo-1.19/dist/h5p-interactive-video.css?ver=1.19.4": "",
+    "./lib/uploads/h5p/libraries/H5P.Audio-1.2/styles/audio.css?ver=1.2.13": "",
+    "./lib/uploads/h5p/libraries/H5P.CoursePresentation-1.19/dist/h5p-course-presentation.css?ver=1.19.3": "",
+    "./lib/uploads/h5p/libraries/H5P.Dialogcards-1.6/css/dialogcards.css?ver=1.6.4": "",
+    "./lib/uploads/h5p/libraries/H5P.ExportableTextArea-1.2/css/eta.css?ver=1.2.9": "",
+    "./lib/uploads/h5p/libraries/H5P.TwitterUserFeed-1.0/twitter-user-feed.css?ver=1.0.12": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.RadioSelector-1.2/radio-selector.css?ver=1.2.1": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.CoursePresentation-1.19/styles/cp-editor.css?ver=1.19.1": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.CoursePresentation-1.19/styles/slide-selector.css?ver=1.19.1": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.CoursePresentation-1.19/styles/bg-selector.css?ver=1.19.1": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.CoursePresentation-1.19/styles/toolbar.css?ver=1.19.1": ""
+  }
+}

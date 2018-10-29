@@ -1,0 +1,38 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    name:
+        label: Name    
+        type: text
+        required: true
+
+    slug:
+        label: Slug
+        span: left
+        preset:
+            feild: name    
+            type: slug
+            
+    watched:
+        label: Watched        
+        span: right
+        readOnly: true
+        type: number
+
+    description:        
+        label: Description
+        type:  richeditor
+
+    media:
+        type: partial
+        path: $/elearning/system/controllers/lessons/media_feilds.htm
+
+   
+
+    
+        
+
+          

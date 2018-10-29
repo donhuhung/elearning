@@ -1,0 +1,11 @@
+{
+  "semantics": [
+    {
+      "name": "nil",
+      "type": "boolean",
+      "widget": "none",
+      "optional": true
+    }
+  ],
+  "language": null
+}

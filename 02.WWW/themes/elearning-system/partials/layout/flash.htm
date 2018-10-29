@@ -1,0 +1,18 @@
+description = "Flash message partial"
+==
+{% flash %} 
+    <div class="alert alert-{{ type == 'error' ? 'danger' : type }} alert-dismissible" id="alrt-layout">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+    </div> 
+{% endflash %}
+<div class="hidden" id="customFlashAjax">
+    <div class="alert alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <span class="msgTxt"></span>
+    </div>
+</div>

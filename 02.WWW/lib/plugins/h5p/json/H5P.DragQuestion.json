@@ -1,0 +1,648 @@
+{
+  "semantics": [
+    {
+      "name": "scoreShow",
+      "type": "text",
+      "label": "Check answer button",
+      "importance": "low",
+      "default": "Check",
+      "common": true
+    },
+    {
+      "name": "tryAgain",
+      "type": "text",
+      "label": "Retry button",
+      "importance": "low",
+      "default": "Retry",
+      "common": true,
+      "optional": true
+    },
+    {
+      "name": "scoreExplanation",
+      "type": "text",
+      "label": "Score explanation text",
+      "importance": "low",
+      "default": "Correct answers give +1 point. Incorrect answers give -1 point. The lowest possible score is 0.",
+      "common": true,
+      "optional": true
+    },
+    {
+      "name": "question",
+      "type": "group",
+      "importance": "high",
+      "fields": [
+        {
+          "name": "settings",
+          "type": "group",
+          "label": "Settings",
+          "importance": "high",
+          "fields": [
+            {
+              "name": "questionTitle",
+              "type": "text",
+              "label": "The title of this question",
+              "importance": "high",
+              "default": "Drag and Drop",
+              "description": "Used in summaries, statistics etc."
+            },
+            {
+              "name": "showTitle",
+              "type": "boolean",
+              "label": "Show Title",
+              "importance": "low",
+              "description": "Uncheck this option if you do not want this title to be displayed. The title will only be displayed in summaries, statistics etc.",
+              "default": true
+            },
+            {
+              "name": "background",
+              "type": "image",
+              "label": "Background image",
+              "importance": "low",
+              "optional": true,
+              "description": "Optional. Select an image to use as background for your drag and drop task."
+            },
+            {
+              "name": "size",
+              "type": "group",
+              "widget": "dimensions",
+              "label": "Task size",
+              "importance": "low",
+              "description": "Specify how large (in px) the play area should be.",
+              "default": {
+                "width": 620,
+                "height": 310,
+                "field": "background"
+              },
+              "fields": [
+                {
+                  "name": "width",
+                  "type": "number"
+                },
+                {
+                  "name": "height",
+                  "type": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "task",
+          "type": "group",
+          "widget": "dragQuestion",
+          "label": "Task",
+          "importance": "high",
+          "description": "Start by placing your drop zones.<br/>Next, place your droppable elements and check off the appropriate drop zones.<br/>Last, edit your drop zone again and check off the correct answers.",
+          "fields": [
+            {
+              "name": "elements",
+              "type": "list",
+              "label": "Elements",
+              "importance": "high",
+              "entity": "element",
+              "field": {
+                "type": "group",
+                "label": "Element",
+                "importance": "high",
+                "fields": [
+                  {
+                    "name": "type",
+                    "type": "library",
+                    "description": "Choose the type of content you would like to add.",
+                    "importance": "medium",
+                    "options": [
+                      "H5P.AdvancedText 1.1",
+                      "H5P.Image 1.0"
+                    ]
+                  },
+                  {
+                    "name": "x",
+                    "type": "number",
+                    "widget": "none"
+                  },
+                  {
+                    "name": "y",
+                    "type": "number",
+                    "widget": "none"
+                  },
+                  {
+                    "name": "height",
+                    "type": "number",
+                    "widget": "none"
+                  },
+                  {
+                    "name": "width",
+                    "type": "number",
+                    "widget": "none"
+                  },
+                  {
+                    "name": "dropZones",
+                    "type": "select",
+                    "widget": "dynamicCheckboxes",
+                    "label": "Select drop zones",
+                    "importance": "high",
+                    "multiple": true
+                  },
+                  {
+                    "name": "backgroundOpacity",
+                    "type": "number",
+                    "label": "Background Opacity",
+                    "importance": "low",
+                    "min": 0,
+                    "max": 100,
+                    "step": 5,
+                    "default": 100,
+                    "optional": true
+                  },
+                  {
+                    "name": "multiple",
+                    "type": "boolean",
+                    "label": "Infinite number of element instances",
+                    "importance": "low",
+                    "description": "Clones this element so that it can be dragged to multiple drop zones.",
+                    "default": false
+                  }
+                ]
+              }
+            },
+            {
+              "name": "dropZones",
+              "type": "list",
+              "label": "Drop Zones",
+              "importance": "high",
+              "entity": "Drop Zone",
+              "field": {
+                "type": "group",
+                "label": "Drop Zone",
+                "importance": "high",
+                "fields": [
+                  {
+                    "name": "label",
+                    "type": "text",
+                    "widget": "html",
+                    "label": "Label",
+                    "importance": "medium",
+                    "enterMode": "div",
+                    "tags": [
+                      "strong",
+                      "em",
+                      "del"
+                    ]
+                  },
+                  {
+                    "name": "showLabel",
+                    "type": "boolean",
+                    "label": "Show label",
+                    "importance": "low"
+                  },
+                  {
+                    "name": "x",
+                    "type": "number",
+                    "widget": "none"
+                  },
+                  {
+                    "name": "y",
+                    "type": "number",
+                    "widget": "none"
+                  },
+                  {
+                    "name": "height",
+                    "type": "number",
+                    "widget": "none"
+                  },
+                  {
+                    "name": "width",
+                    "type": "number",
+                    "widget": "none"
+                  },
+                  {
+                    "name": "correctElements",
+                    "type": "select",
+                    "widget": "dynamicCheckboxes",
+                    "label": "Select correct elements",
+                    "importance": "low",
+                    "multiple": true
+                  },
+                  {
+                    "name": "backgroundOpacity",
+                    "type": "number",
+                    "label": "Background Opacity",
+                    "importance": "low",
+                    "min": 0,
+                    "max": 100,
+                    "step": 5,
+                    "default": 100,
+                    "optional": true
+                  },
+                  {
+                    "name": "tipsAndFeedback",
+                    "type": "group",
+                    "label": "Tips and feedback",
+                    "importance": "low",
+                    "optional": true,
+                    "fields": [
+                      {
+                        "name": "tip",
+                        "label": "Tip text",
+                        "importance": "low",
+                        "type": "text",
+                        "widget": "html",
+                        "tags": [
+                          "p",
+                          "br",
+                          "strong",
+                          "em"
+                        ],
+                        "optional": true
+                      },
+                      {
+                        "name": "feedbackOnCorrect",
+                        "type": "text",
+                        "label": "Message displayed on correct match",
+                        "importance": "low",
+                        "description": "Message will appear below the task on \"check\" if correct droppable is matched.",
+                        "optional": true
+                      },
+                      {
+                        "name": "feedbackOnIncorrect",
+                        "type": "text",
+                        "label": "Message displayed on incorrect match",
+                        "importance": "low",
+                        "description": "Message will appear below the task on \"check\" if the match is incorrect.",
+                        "optional": true
+                      }
+                    ]
+                  },
+                  {
+                    "name": "single",
+                    "type": "boolean",
+                    "label": "This drop zone can only contain one element",
+                    "description": "Make sure there is only one correct answer for this dropzone",
+                    "importance": "low",
+                    "default": false
+                  },
+                  {
+                    "name": "autoAlign",
+                    "type": "boolean",
+                    "label": "Enable Auto-Align",
+                    "importance": "low",
+                    "description": "Will auto-align all draggables dropped in this zone."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "widget": "wizard"
+    },
+    {
+      "name": "overallFeedback",
+      "type": "group",
+      "label": "Overall Feedback",
+      "importance": "low",
+      "expanded": true,
+      "fields": [
+        {
+          "name": "overallFeedback",
+          "type": "list",
+          "widgets": [
+            {
+              "name": "RangeList",
+              "label": "Default"
+            }
+          ],
+          "importance": "high",
+          "label": "Define custom feedback for any score range",
+          "description": "Click the \"Add range\" button to add as many ranges as you need. Example: 0-20% Bad score, 21-91% Average Score, 91-100% Great Score!",
+          "entity": "range",
+          "min": 1,
+          "defaultNum": 1,
+          "optional": true,
+          "field": {
+            "name": "overallFeedback",
+            "type": "group",
+            "importance": "low",
+            "fields": [
+              {
+                "name": "from",
+                "type": "number",
+                "label": "Score Range",
+                "min": 0,
+                "max": 100,
+                "default": 0,
+                "unit": "%"
+              },
+              {
+                "name": "to",
+                "type": "number",
+                "min": 0,
+                "max": 100,
+                "default": 100,
+                "unit": "%"
+              },
+              {
+                "name": "feedback",
+                "type": "text",
+                "label": "Feedback for defined score range",
+                "importance": "low",
+                "placeholder": "Fill in the feedback",
+                "optional": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "behaviour",
+      "type": "group",
+      "label": "Behavioural settings",
+      "importance": "low",
+      "optional": true,
+      "description": "These options will let you control how the task behaves.",
+      "fields": [
+        {
+          "name": "enableRetry",
+          "type": "boolean",
+          "label": "Enable \"Retry\"",
+          "importance": "low",
+          "default": true
+        },
+        {
+          "name": "enableCheckButton",
+          "type": "boolean",
+          "label": "Enable \"Check\" button",
+          "widget": "none",
+          "importance": "low",
+          "default": true,
+          "optional": true
+        },
+        {
+          "label": "Require user input before the solution can be viewed",
+          "importance": "low",
+          "name": "showSolutionsRequiresInput",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "singlePoint",
+          "type": "boolean",
+          "label": "Give one point for the whole task",
+          "importance": "low",
+          "description": "Disable to give one point for each draggable that is placed correctly.",
+          "default": false
+        },
+        {
+          "label": "Apply penalties",
+          "name": "applyPenalties",
+          "type": "boolean",
+          "description": "Apply penalties for elements dropped in the wrong drop zones. This must be enabled when the same element(s) are able to be dropped into multiple drop zones, or if there is only one drop-zone. If this is not enabled, learners may match all items to all drop-zones and always receive a full score.",
+          "default": true
+        },
+        {
+          "name": "enableScoreExplanation",
+          "type": "boolean",
+          "label": "Enable score explanation",
+          "description": "Display a score explanation to user when checking their answers (if the 'Apply penalties' option has been selected).",
+          "importance": "low",
+          "default": true,
+          "optional": true,
+          "widget": "showWhen",
+          "showWhen": {
+            "rules": [
+              {
+                "field": "singlePoint",
+                "equals": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "backgroundOpacity",
+          "type": "text",
+          "label": "Background opacity for draggables",
+          "importance": "low",
+          "description": "If this field is set, it will override opacity set on all draggable elements. This should be a number between 0 and 100, where 0 means full transparency and 100 means no transparency",
+          "optional": true
+        },
+        {
+          "name": "dropZoneHighlighting",
+          "type": "select",
+          "label": "Drop Zone Highlighting",
+          "importance": "low",
+          "description": "Choose when to highlight drop zones.",
+          "default": "dragging",
+          "options": [
+            {
+              "value": "dragging",
+              "label": "When dragging"
+            },
+            {
+              "value": "always",
+              "label": "Always"
+            },
+            {
+              "value": "never",
+              "label": "Never"
+            }
+          ]
+        },
+        {
+          "name": "autoAlignSpacing",
+          "type": "number",
+          "label": "Spacing for Auto-Align (in px)",
+          "importance": "low",
+          "min": 0,
+          "default": 2,
+          "optional": true
+        },
+        {
+          "name": "enableFullScreen",
+          "label": "Enable FullScreen",
+          "importance": "low",
+          "type": "boolean",
+          "description": "Check this option to enable the full screen button.",
+          "default": false
+        },
+        {
+          "name": "showScorePoints",
+          "type": "boolean",
+          "label": "Show score points",
+          "description": "Show points earned for each answer. Not available when the 'Give one point for the whole task' option is enabled.",
+          "importance": "low",
+          "default": true
+        }
+      ]
+    },
+    {
+      "label": "Localize",
+      "name": "localize",
+      "type": "group",
+      "common": true,
+      "fields": [
+        {
+          "name": "fullscreen",
+          "type": "text",
+          "label": "Fullscreen label",
+          "default": "Fullscreen"
+        },
+        {
+          "name": "exitFullscreen",
+          "type": "text",
+          "label": "Exit fullscreen label",
+          "default": "Exit fullscreen"
+        }
+      ]
+    },
+    {
+      "label": "Grabbable prefix",
+      "importance": "low",
+      "name": "grabbablePrefix",
+      "type": "text",
+      "default": "Grabbable {num} of {total}.",
+      "common": true
+    },
+    {
+      "label": "Grabbable suffix",
+      "importance": "low",
+      "name": "grabbableSuffix",
+      "type": "text",
+      "default": "Placed in dropzone {num}.",
+      "common": true
+    },
+    {
+      "label": "Dropzone prefix",
+      "importance": "low",
+      "name": "dropzonePrefix",
+      "type": "text",
+      "default": "Dropzone {num} of {total}.",
+      "common": true
+    },
+    {
+      "label": "No dropzone selection label",
+      "importance": "low",
+      "name": "noDropzone",
+      "type": "text",
+      "default": "No dropzone.",
+      "common": true
+    },
+    {
+      "label": "Label for show tip button",
+      "importance": "low",
+      "name": "tipLabel",
+      "type": "text",
+      "default": "Show tip.",
+      "common": true
+    },
+    {
+      "label": "Label for tip available",
+      "importance": "low",
+      "name": "tipAvailable",
+      "type": "text",
+      "default": "Tip available",
+      "common": true
+    },
+    {
+      "label": "Label for correct answer",
+      "importance": "low",
+      "name": "correctAnswer",
+      "type": "text",
+      "default": "Correct answer",
+      "common": true
+    },
+    {
+      "label": "Label for incorrect answer",
+      "importance": "low",
+      "name": "wrongAnswer",
+      "type": "text",
+      "default": "Wrong answer",
+      "common": true
+    },
+    {
+      "label": "Header for panel containing feedback for correct/incorrect answers",
+      "importance": "low",
+      "name": "feedbackHeader",
+      "type": "text",
+      "default": "Feedback",
+      "common": true
+    },
+    {
+      "name": "scoreBarLabel",
+      "type": "text",
+      "label": "Textual representation of the score bar for those using a readspeaker",
+      "importance": "low",
+      "default": "You got :num out of :total points",
+      "common": true
+    },
+    {
+      "label": "Textual representation of the score explanation button",
+      "importance": "low",
+      "name": "scoreExplanationButtonLabel",
+      "type": "text",
+      "common": true,
+      "default": "Show score explanation"
+    }
+  ],
+  "language": null,
+  "javascript": {
+    "./lib/uploads/h5p/libraries/H5PEditor.TableList-1.0/h5p-editor-table-list.js?ver=1.0.3": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.RangeList-1.0/h5p-editor-range-list.js?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/H5P.AdvancedText-1.1/text.js?ver=1.1.5": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNDrop-1.1/drag-n-drop.js?ver=1.1.5": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNResize-1.2/H5P.DragNResize.js?ver=1.2.5": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNBar-1.4/scripts/drag-n-bar.js?ver=1.4.8": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNBar-1.4/scripts/context-menu.js?ver=1.4.8": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNBar-1.4/scripts/dialog.js?ver=1.4.8": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNBar-1.4/scripts/drag-n-bar-element.js?ver=1.4.8": "",
+    "./lib/uploads/h5p/libraries/H5P.Image-1.0/image.js?ver=1.0.32": "",
+    "./lib/uploads/h5p/libraries/Tether-1.0/scripts/tether.min.js?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/Drop-1.0/js/drop.min.js?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/H5P.Transition-1.0/transition.js?ver=1.0.4": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-help-dialog.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-message-dialog.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-progress-circle.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-simple-rounded-button.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-speech-bubble.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-throbber.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-tip.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-slider.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-score-bar.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-progressbar.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/js/joubel-ui.js?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.Wizard-1.2/Scripts/Wizard.js?ver=1.2.4": "",
+    "./lib/uploads/h5p/libraries/jQuery.ui-1.10/h5p-jquery-ui.js?ver=1.10.19": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.DragQuestion-1.9/H5PEditor.DragQuestion.js?ver=1.9.5": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.DragQuestion-1.9/H5PEditor.DynamicCheckboxes.js?ver=1.9.5": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.ShowWhen-1.0/h5p-show-when.js?ver=1.0.4": ""
+  },
+  "css": {
+    "./lib/uploads/h5p/libraries/H5PEditor.TableList-1.0/h5p-editor-table-list.css?ver=1.0.3": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.RangeList-1.0/h5p-editor-range-list.css?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/FontAwesome-4.5/h5p-font-awesome.min.css?ver=4.5.4": "",
+    "./lib/uploads/h5p/libraries/H5P.AdvancedText-1.1/text.css?ver=1.1.5": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNResize-1.2/H5P.DragNResize.css?ver=1.2.5": "",
+    "./lib/uploads/h5p/libraries/H5P.FontIcons-1.0/styles/h5p-font-icons.css?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNBar-1.4/styles/drag-n-bar.css?ver=1.4.8": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNBar-1.4/styles/dialog.css?ver=1.4.8": "",
+    "./lib/uploads/h5p/libraries/H5P.DragNBar-1.4/styles/context-menu.css?ver=1.4.8": "",
+    "./lib/uploads/h5p/libraries/H5P.Image-1.0/image.css?ver=1.0.32": "",
+    "./lib/uploads/h5p/libraries/Tether-1.0/styles/tether.min.css?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/Drop-1.0/css/drop-theme-arrows-bounce.min.css?ver=1.0.2": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-help-dialog.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-message-dialog.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-progress-circle.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-simple-rounded-button.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-speech-bubble.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-tip.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-slider.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-score-bar.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-progressbar.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-ui.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5P.JoubelUI-1.3/css/joubel-icon.css?ver=1.3.7": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.Wizard-1.2/Styles/Wizard.css?ver=1.2.4": "",
+    "./lib/uploads/h5p/libraries/jQuery.ui-1.10/h5p-jquery-ui.css?ver=1.10.19": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.DragQuestion-1.9/H5PEditor.DragQuestion.css?ver=1.9.5": "",
+    "./lib/uploads/h5p/libraries/H5PEditor.ShowWhen-1.0/h5p-show-when.css?ver=1.0.4": ""
+  }
+}

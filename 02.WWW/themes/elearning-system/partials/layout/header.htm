@@ -1,0 +1,132 @@
+description = "Header of layout"
+==
+<div class="header">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light navbar--page">
+            <a class="navbar-brand" href="{{url('/')}}">
+                <img src="{{'assets/images/logo.png'|theme}}" alt=""/>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="javascrip:void(0)navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="my-2 my-lg-0 mr-auto">
+                    <div class="d-flex justify-content-start">
+                        <div class="dropdown_cate">
+                            <button class="dropbtn btn btn_flex">
+                                <img src="{{'assets/images/icon_danhmuc.png'|theme}}" alt=""/>
+                                Danh mục
+                            </button>
+                            <div class="dropdown-content">
+                                <div class="pos-relative">
+                                    <div class="menu_learn_cate">                                        
+                                        <div class="item">
+                                            <a href="{{url('/')}}" class="active">Trang chủ</a>
+                                        </div>                                        
+                                        <div class="item">
+                                            <a href="#">Môn học</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="/khoa-hoc">Khóa học</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="form-inline form_search">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm khoá học"
+                                   aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                                <img src="{{'assets/images/icon_search.png'|theme}}" alt=""/>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <ul class="navbar-nav nav_head">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="javascrip:void(0)">
+                            <img src="{{'assets/images/icon_lock.png'|theme}}" alt=""/>
+                            Kích hoạt khoá học
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascrip:void(0)">
+                            <img src="{{'assets/images/icon_card.png'|theme}}" alt=""/>
+                            <sup>
+                                <span class="badge badge-danger">5</span>
+                            </sup>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascrip:void(0)">
+                            <img src="{{'assets/images/icon_notifi.png'|theme}}" alt=""/>
+                            <sup>
+                                <span class="badge badge-danger">5000</span>
+                            </sup>
+                        </a>
+                    </li>
+                    {% if user %}
+                    <li class="nav-item">
+                        <div class="user_authenticated">
+                            <p class="username">{{user.name}}</p>
+                            <div class="avatar" data-toggle="popover" data-html=true>
+                                {% if user.avatar%}
+                                <img src="{{user.avatar.getPath()}}" alt="">
+                                {% else%}
+                                <img src="{{'assets/images/avt.png'|theme}}" alt="">
+                                {% endif %}
+                            </div>
+                            <div class="list_menu_profile">
+                                {% if user.groups[0].id != 3 %}
+                                <div class="item">
+                                    <a class="active" href="/user-profile">Thông tin cá nhân</a>
+                                </div>
+                                <div class="item">
+                                    <a href="#">Khóa học đã đăng ký</a>
+                                </div>
+                                <div class="item">
+                                    <a href="#">Lịch học</a>
+                                </div>
+                                <div class="item">
+                                    <a href="#">Kết quả kiểm tra</a>
+                                </div>
+                                {% else %}
+                                <div class="item">
+                                    <a class="active" href="/dashboard-teacher">Thông tin cá nhân</a>
+                                </div>
+                                <div class="item">
+                                    <a href="/quan-ly-khoa-hoc">Quản lý khóa học</a>
+                                </div>
+                                <div class="item">
+                                    <a href="/profile-teacher">Khóa học phụ trách</a>
+                                </div>
+                                <div class="item">
+                                    <a href="/profile-teacher">Chỉnh sửa thông tin cá nhân</a>
+                                </div>                                                               
+                                {% endif %}
+                                <div class="item">
+                                    <a data-request="onLogout" data-request-data="redirect: '/'" href="javascript:void(0)">Thoát</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>                                            
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#modal_page_signup">
+                            Đăng ký
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#modal_page_signin">
+                            Đăng nhập
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+</div>

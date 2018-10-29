@@ -1,0 +1,9 @@
+title = "GoodWorks Online Academy"
+url = "/quan-ly-khoa-hoc/:page?|^[0-9]+$"
+layout = "default"
+is_hidden = 0
+tab="management-course"
+[management_course]
+pageNumber = "{{ :page }}"
+==
+{% component 'management_course' %}

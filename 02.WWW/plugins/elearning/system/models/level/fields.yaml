@@ -1,0 +1,11 @@
+fields:
+    id:
+        label: ID
+        disabled: true
+        readOnly: true
+        spane: left
+        type: text
+    name:
+        label: Name
+        type: text
+        spane: left

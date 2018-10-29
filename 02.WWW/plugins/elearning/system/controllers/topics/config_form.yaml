@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Topic
+
+# Model Form Field configuration
+form: $/elearning/system/models/topic/fields.yaml
+
+# Model Class name
+modelClass: Elearning\System\Models\Topic
+
+# Default redirect location
+defaultRedirect: elearning/system/topics
+
+# Create page
+create:
+    title: Create Topic
+    redirect: elearning/system/topics/update/:id
+    redirectClose: elearning/system/topics
+
+# Update page
+update:
+    title: Edit Topic
+    redirect: elearning/system/topics
+    redirectClose: elearning/system/topics
+
+# Preview page
+preview:
+    title: Preview Topic

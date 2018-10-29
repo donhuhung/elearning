@@ -1,0 +1,22 @@
+<div class="left_content">
+    {% if question_id > 0%} 
+        {% partial __SELF__~'::edit-bank-question' %}                   
+    {% else %}
+    <h3 class="title_line">Ngân hàng câu hỏi</h3>  
+    <div class="tab-pane fade show active" id="nganhang" role="tabpanel" aria-labelledby="contact-tab">
+        <form class="form-auth" id="form_questions" data-request='onCreateQuestion'>            
+            <div class="form-group">
+                <input type="text" class="form-control"
+                       id="txt_input_question"
+                       name="question"
+                       placeholder="Nội dung câu hỏi" required>
+            </div>
+            <div class="block-answer">
+                {% partial __SELF__~'::block-answer' %}                
+            </div>                            
+            <input type="hidden" id="total-answer" name="total-answer" value="1">
+            <button type="submit" class="btn btn-primary btn--full">lưu</button>
+        </form>
+    </div>
+    {% endif %}
+</div>

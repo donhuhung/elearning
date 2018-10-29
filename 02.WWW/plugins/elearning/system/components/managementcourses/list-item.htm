@@ -1,0 +1,29 @@
+{% for item in listCourses%}
+<div class="item">
+    <div class="_content">
+        <h4 class="_title">
+            <a href="/tao-khoa-hoc/{{item.id}}">
+                {{item.name}}
+            </a>
+        </h4>
+        <div class="ders">
+            <div class="pic_thumb">
+                <img src="/storage/app/media/{{item.thumbnail}}" alt="">
+            </div>
+            <p class="title_ders">
+                {{str_limit(item.description,70)|raw}}
+            </p>
+        </div>
+        <div class="link">
+            <a class="color_gray" href="/tao-khoa-hoc/{{item.id}}">
+                <i class="fa fa-edit"></i>
+                Chỉnh sửa
+            </a>
+            <a class="color_blue delete-record" data-id='{{item.id}}' data-type='course' href="javascript:void(0)">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+                Xoá
+            </a>
+        </div>
+    </div>
+</div>
+{% endfor %}

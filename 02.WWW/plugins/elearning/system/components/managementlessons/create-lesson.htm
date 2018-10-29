@@ -1,0 +1,344 @@
+<div class="left_content">
+    <h3 class="title_line">Bài học</h3>    
+    <div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        {{ form_open({ class:'form-auth', id:'h5p-content-form',request: 'onCreateLesson', files: true, success:'ELEARNING.registerLessonSuccess("new")' }) }}        
+            <div class="form-group">
+                <input type="text" class="form-control" name="full_name" aria-describedby="emailHelp"
+                       placeholder="Tên bài học" required>
+            </div>
+            <div class="form-group">
+                <div class="pic_file_topic">
+                    <span>Chọn hình ảnh</span>
+                    <input class="file_input_pic" name="avatar" type="file" required>
+                    <div class="pic_file_topic--avatar">
+                        <img src="#" alt="" class="pic_thumb_file">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" rows="4"
+                          placeholder="Mô tả" name="info_body" required>Mô tả</textarea>
+            </div>
+            <div class="form-group">
+                <select class="custom-select lesson_type" name="lesson_type" required>
+                    <option value="">Nội dung - ( Text, ppt, pdf, word, Interactive Video)
+                    </option>
+                    <option value="1">File Document (Text,ppt,pdf,word)</option>
+                    <option value="2">Interactive Video</option>
+                </select>
+            </div>
+			<div class="type-document" style="display:none;">
+				<div class="form-group">
+					<input type="file" id="file-document" name="file-document"/>
+				</div>
+			</div>			
+			<div class="type-h5p" style="display:none;">
+				<div id="post-body-content">
+				<div class="h5p-create">
+					<div class="h5p-editor"></div>
+				</div>
+			</div>
+			<div class="postbox h5p-sidebar">                            
+				<div id="minor-publishing" style="display:none">
+					<label><input type="radio" name="action" value="upload"/>Upload</label>
+					<label><input type="radio" name="action" value="create"/>Create</label>
+					<input type="hidden" name="library" value="0"/>
+					<input type="hidden" name="parameters" value="{}"/>                                                
+				</div>
+			</div>
+
+			<div class="postbox h5p-sidebar">
+				<div role="button" class="h5p-toggle" tabindex="0" aria-expanded="true" aria-label="Toggle panel"></div>
+			</div>                                
+                <script>
+                    H5PIntegration = {
+                        "baseUrl": URL_ROOT+"/h5p-all/",
+                        "postUserStatistics": true,
+                        "saveFreq": false,
+                        "siteUrl": URL_ROOT+"/h5p-all/",
+                        "l10n": {
+                            "H5P": {
+                                "fullscreen": "Fullscreen",
+                                "disableFullscreen": "Disable fullscreen",
+                                "download": "Download",
+                                "copyrights": "Rights of use",
+                                "embed": "Embed",
+                                "size": "Size",
+                                "showAdvanced": "Show advanced",
+                                "hideAdvanced": "Hide advanced",
+                                "advancedHelp": "Include this script on your website if you want dynamic sizing of the embedded content:",
+                                "copyrightInformation": "Rights of use",
+                                "close": "Close",
+                                "title": "Title",
+                                "author": "Author",
+                                "year": "Year",
+                                "source": "Source",
+                                "license": "License",
+                                "thumbnail": "Thumbnail",
+                                "noCopyrights": "No copyright information available for this content.",
+                                "downloadDescription": "Download this content as a H5P file.",
+                                "copyrightsDescription": "View copyright information for this content.",
+                                "embedDescription": "View the embed code for this content.",
+                                "h5pDescription": "Visit H5P.org to check out more cool content.",
+                                "contentChanged": "This content has changed since you last used it.",
+                                "startingOver": "You'll be starting over.",
+                                "by": "by",
+                                "showMore": "Show more",
+                                "showLess": "Show less",
+                                "subLevel": "Sublevel",
+                                "confirmDialogHeader": "Confirm action",
+                                "confirmDialogBody": "Please confirm that you wish to proceed. This action is not reversible.",
+                                "cancelLabel": "Cancel",
+                                "confirmLabel": "Confirm",
+                                "licenseU": "Undisclosed",
+                                "licenseCCBY": "Attribution",
+                                "licenseCCBYSA": "Attribution-ShareAlike",
+                                "licenseCCBYND": "Attribution-NoDerivs",
+                                "licenseCCBYNC": "Attribution-NonCommercial",
+                                "licenseCCBYNCSA": "Attribution-NonCommercial-ShareAlike",
+                                "licenseCCBYNCND": "Attribution-NonCommercial-NoDerivs",
+                                "licenseCC40": "4.0 International",
+                                "licenseCC30": "3.0 Unported",
+                                "licenseCC25": "2.5 Generic",
+                                "licenseCC20": "2.0 Generic",
+                                "licenseCC10": "1.0 Generic",
+                                "licenseGPL": "General Public License",
+                                "licenseV3": "Version 3",
+                                "licenseV2": "Version 2",
+                                "licenseV1": "Version 1",
+                                "licensePD": "Public Domain",
+                                "licenseCC010": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+                                "licensePDM": "Public Domain Mark",
+                                "licenseC": "Copyright"
+                            }
+                        },
+                        "hubIsEnabled": true,
+                        "reportingIsEnabled": false,
+                        "user": {
+                            "name": "sysadmin",
+                            "mail": "hoangphuc2587@gmail.com"
+                        },
+                        "core": {
+                            "styles": ["{{'assets/lib/plugins/h5p/h5p-php-library/styles/h5p.css'|theme}}", "{{'assets/lib/plugins/h5p/h5p-php-library/styles/h5p-confirmation-dialog.css'|theme}}", "{{'assets/lib/plugins/h5p/h5p-php-library/styles/h5p-core-button.css'|theme}}"],
+                            "scripts": ["{{'assets/lib/plugins/h5p/h5p-php-library/js/jquery.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p-event-dispatcher.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p-x-api-event.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p-x-api.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p-content-type.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p-confirmation-dialog.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p-action-bar.js'|theme}}"]
+                        },
+                        "loadedJs": [],
+                        "loadedCss": [],
+                        "editor": {
+                            "filesPath": "{{'assets/lib/uploads/h5p/editor'|theme}}",
+                            "fileIcon": {
+                                "path": "{{'assets/lib/plugins/h5p/h5p-editor-php-library/images/binary-file.png'|theme}}",
+                                "width": 50,
+                                "height": 50
+                            },
+                            "ajaxPath": "/wp-admin/admin-ajax.php?token=f9959bf185&action=h5p_",
+                            "libraryUrl": "{{'assets/lib/plugins/h5p/h5p-editor-php-library/'|theme}}",
+                            "copyrightSemantics": {
+                                "name": "copyright",
+                                "type": "group",
+                                "label": "Copyright information",
+                                "fields": [{
+                                    "name": "title",
+                                    "type": "text",
+                                    "label": "Title",
+                                    "placeholder": "La Gioconda",
+                                    "optional": true
+                                }, {
+                                    "name": "author",
+                                    "type": "text",
+                                    "label": "Author",
+                                    "placeholder": "Leonardo da Vinci",
+                                    "optional": true
+                                }, {
+                                    "name": "year",
+                                    "type": "text",
+                                    "label": "Year(s)",
+                                    "placeholder": "1503 - 1517",
+                                    "optional": true
+                                }, {
+                                    "name": "source",
+                                    "type": "text",
+                                    "label": "Source",
+                                    "placeholder": "http://en.wikipedia.org/wiki/Mona_Lisa",
+                                    "optional": true,
+                                    "regexp": {
+                                        "pattern": "^http[s]?://.+",
+                                        "modifiers": "i"
+                                    }
+                                }, {
+                                    "name": "license",
+                                    "type": "select",
+                                    "label": "License",
+                                    "default": "U",
+                                    "options": [{
+                                        "value": "U",
+                                        "label": "Undisclosed"
+                                    }, {
+                                        "value": "CC BY",
+                                        "label": "Attribution",
+                                        "versions": [{
+                                            "value": "4.0",
+                                            "label": "4.0 International"
+                                        }, {
+                                            "value": "3.0",
+                                            "label": "3.0 Unported"
+                                        }, {
+                                            "value": "2.5",
+                                            "label": "2.5 Generic"
+                                        }, {
+                                            "value": "2.0",
+                                            "label": "2.0 Generic"
+                                        }, {
+                                            "value": "1.0",
+                                            "label": "1.0 Generic"
+                                        }]
+                                    }, {
+                                        "value": "CC BY-SA",
+                                        "label": "Attribution-ShareAlike",
+                                        "versions": [{
+                                            "value": "4.0",
+                                            "label": "4.0 International"
+                                        }, {
+                                            "value": "3.0",
+                                            "label": "3.0 Unported"
+                                        }, {
+                                            "value": "2.5",
+                                            "label": "2.5 Generic"
+                                        }, {
+                                            "value": "2.0",
+                                            "label": "2.0 Generic"
+                                        }, {
+                                            "value": "1.0",
+                                            "label": "1.0 Generic"
+                                        }]
+                                    }, {
+                                        "value": "CC BY-ND",
+                                        "label": "Attribution-NoDerivs",
+                                        "versions": [{
+                                            "value": "4.0",
+                                            "label": "4.0 International"
+                                        }, {
+                                            "value": "3.0",
+                                            "label": "3.0 Unported"
+                                        }, {
+                                            "value": "2.5",
+                                            "label": "2.5 Generic"
+                                        }, {
+                                            "value": "2.0",
+                                            "label": "2.0 Generic"
+                                        }, {
+                                            "value": "1.0",
+                                            "label": "1.0 Generic"
+                                        }]
+                                    }, {
+                                        "value": "CC BY-NC",
+                                        "label": "Attribution-NonCommercial",
+                                        "versions": [{
+                                            "value": "4.0",
+                                            "label": "4.0 International"
+                                        }, {
+                                            "value": "3.0",
+                                            "label": "3.0 Unported"
+                                        }, {
+                                            "value": "2.5",
+                                            "label": "2.5 Generic"
+                                        }, {
+                                            "value": "2.0",
+                                            "label": "2.0 Generic"
+                                        }, {
+                                            "value": "1.0",
+                                            "label": "1.0 Generic"
+                                        }]
+                                    }, {
+                                        "value": "CC BY-NC-SA",
+                                        "label": "Attribution-NonCommercial-ShareAlike",
+                                        "versions": [{
+                                            "value": "4.0",
+                                            "label": "4.0 International"
+                                        }, {
+                                            "value": "3.0",
+                                            "label": "3.0 Unported"
+                                        }, {
+                                            "value": "2.5",
+                                            "label": "2.5 Generic"
+                                        }, {
+                                            "value": "2.0",
+                                            "label": "2.0 Generic"
+                                        }, {
+                                            "value": "1.0",
+                                            "label": "1.0 Generic"
+                                        }]
+                                    }, {
+                                        "value": "CC BY-NC-ND",
+                                        "label": "Attribution-NonCommercial-NoDerivs",
+                                        "versions": [{
+                                            "value": "4.0",
+                                            "label": "4.0 International"
+                                        }, {
+                                            "value": "3.0",
+                                            "label": "3.0 Unported"
+                                        }, {
+                                            "value": "2.5",
+                                            "label": "2.5 Generic"
+                                        }, {
+                                            "value": "2.0",
+                                            "label": "2.0 Generic"
+                                        }, {
+                                            "value": "1.0",
+                                            "label": "1.0 Generic"
+                                        }]
+                                    }, {
+                                        "value": "GNU GPL",
+                                        "label": "General Public License",
+                                        "versions": [{
+                                            "value": "v3",
+                                            "label": "Version 3"
+                                        }, {
+                                            "value": "v2",
+                                            "label": "Version 2"
+                                        }, {
+                                            "value": "v1",
+                                            "label": "Version 1"
+                                        }]
+                                    }, {
+                                        "value": "PD",
+                                        "label": "Public Domain",
+                                        "versions": [{
+                                            "value": "-",
+                                            "label": "-"
+                                        }, {
+                                            "value": "CC0 1.0",
+                                            "label": "CC0 1.0 Universal"
+                                        }, {
+                                            "value": "CC PDM",
+                                            "label": "Public Domain Mark"
+                                        }]
+                                    }, {
+                                        "value": "C",
+                                        "label": "Copyright"
+                                    }]
+                                }, {
+                                    "name": "version",
+                                    "type": "select",
+                                    "label": "License Version",
+                                    "options": []
+                                }]
+                            },
+                            "assets": {
+                                "css": ["{{'assets/lib/plugins/h5p/h5p-php-library/styles/h5p.css'|theme}}", "{{'assets/lib/plugins/h5p/h5p-php-library/styles/h5p-confirmation-dialog.css'|theme}}", "{{'assets/lib/plugins/h5p/h5p-php-library/styles/h5p-core-button.css'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/libs/darkroom.css'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/styles/css/h5p-hub-client.css'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/styles/css/fonts.css'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/styles/css/application.css'|theme}}"],
+                                "js": ["{{'assets/lib/plugins/h5p/h5p-php-library/js/jquery.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p-event-dispatcher.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p-x-api-event.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p-x-api.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p-content-type.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p-confirmation-dialog.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-php-library/js/h5p-action-bar.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5p-hub-client.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-semantic-structure.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-library-selector.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-form.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-text.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-html.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-number.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-textarea.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-file-uploader.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-file.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-image.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-image-popup.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-av.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-group.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-boolean.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-list.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-list-editor.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-library.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-library-list-cache.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-select.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-selector-hub.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-selector-legacy.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-dimensions.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-coordinates.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/scripts/h5peditor-none.js'|theme}}", "{{'assets/lib/plugins/h5p/h5p-editor-php-library/ckeditor/ckeditor.js'|theme}}"]
+                            },
+                            "deleteMessage": "Are you sure you wish to delete this content?",
+                            "apiVersion": {
+                                "majorVersion": 1,
+                                "minorVersion": 15
+                            }
+                        }
+                    };
+                </script>
+			</div>						
+                <input type='hidden' id='post-avatar' name='data-avatar'/>
+            <button type="submit" class="btn btn-primary btn--full">lưu</button>
+        </form>
+    </div>
+</div>

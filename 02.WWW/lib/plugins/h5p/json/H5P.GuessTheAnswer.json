@@ -1,0 +1,64 @@
+{
+  "semantics": [
+    {
+      "name": "taskDescription",
+      "type": "text",
+      "label": "Task description",
+      "importance": "medium",
+      "widget": "html",
+      "description": "Describe how the user should solve the task.",
+      "enterMode": "p",
+      "tags": [
+        "strong",
+        "em",
+        "u",
+        "a",
+        "ul",
+        "ol",
+        "h2",
+        "h3",
+        "hr"
+      ],
+      "optional": true
+    },
+    {
+      "name": "media",
+      "type": "group",
+      "label": "Media",
+      "importance": "medium",
+      "fields": [
+        {
+          "name": "type",
+          "type": "library",
+          "label": "Type",
+          "importance": "medium",
+          "options": [
+            "H5P.Image 1.0",
+            "H5P.Video 1.4"
+          ],
+          "optional": true,
+          "description": "Optional media to display above the question."
+        }
+      ]
+    },
+    {
+      "name": "solutionLabel",
+      "importance": "low",
+      "type": "text",
+      "label": "Descriptive solution label",
+      "default": "Click to see the answer.",
+      "description": "Clickable text area where the solution will be displayed.",
+      "widget": "textarea",
+      "optional": true
+    },
+    {
+      "label": "Solution text",
+      "name": "solutionText",
+      "type": "text",
+      "importance": "high",
+      "widget": "textarea",
+      "description": "The solution for the picture."
+    }
+  ],
+  "language": null
+}

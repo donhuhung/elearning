@@ -1,0 +1,33 @@
+<div class="section">
+    <div class="container">
+        <div class="d-flex content_detail">
+            {% component 'sidebar_teacher' %}
+            <div class="left_content">
+                <div class="d-flex d-flex--dropdown d-flex--create">
+                    <div class="dropdown dropdown--custom">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownTopic"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Khóa học
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownTopic">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                    <div class="dropdown dropdown--custom">
+                        <button onclick="window.location.href='/tao-bai-hoc'" class="btn btn-secondary _blue" type="button">
+                            Tạo mới
+                        </button>
+                    </div>
+                </div>
+                <div class="list-own-course">
+                    {% partial __SELF__~'::list-item' %}                
+                </div>
+                {% if listLessons.lastPage > 1 %}
+                    {% partial __SELF__~'::pagination' galleries = listLessons %}
+                {% endif %}      
+            </div>                                                          
+        </div>
+    </div>
+</div>
