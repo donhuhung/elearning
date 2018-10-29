@@ -72,3 +72,6 @@
 1.0.24:
     - 'Created table elearning_system_store_quizz_info'
     - builder_table_create_elearning_system_store_quizz_info.php
+1.0.25:
+    - 'Updated table elearning_system_store_quizz'
+    - builder_table_update_elearning_system_store_quizz_2.php

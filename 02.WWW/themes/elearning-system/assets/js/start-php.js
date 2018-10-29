@@ -166,3 +166,43 @@ ELEARNING.registerLessonSuccess = function (style) {
         });
     }
 }
+
+ELEARNING.registerBankSuccess = function (style) {
+    if (style == "new")
+    {
+        swal({
+            title: "Thành công!!",
+            text: "Câu hỏi của bạn đã được tạo thành công!",
+            type: "success"
+        }, function () {
+            $("#nganhang")[0].reset();
+        });
+    } else
+    {
+        swal({
+            title: "Thành công!!",
+            text: "Câu hỏi của bạn đã được cập nhật thành công!",
+            type: "success"
+        });
+    }
+}
+
+ELEARNING.registerQuizzSuccess = function (style) {
+    if (style == "new")
+    {
+        swal({
+            title: "Thành công!!",
+            text: "Đề thi của bạn đã được tạo thành công!",
+            type: "success"
+        }, function () {
+            $("#quizz")[0].reset();
+        });
+    } else
+    {
+        swal({
+            title: "Thành công!!",
+            text: "Đề thi của bạn đã được cập nhật thành công!",
+            type: "success"
+        });
+    }
+}

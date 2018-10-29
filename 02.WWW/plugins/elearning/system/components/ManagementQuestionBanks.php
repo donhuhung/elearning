@@ -96,4 +96,26 @@ class ManagementQuestionBanks extends ComponentBase
     {
 
     }
+    
+    public function onDelete() {
+        try {            
+            $result = Question::onDelete();
+            if ($result) {
+                return Response::json(array(
+                            'status' => 1,
+                            'message' => 'Success'
+                ));
+            } else {
+                return Response::json(array(
+                            'status' => 0,
+                            'message' => 'Error'
+                ));
+            }
+        } catch (\Exception $e) {
+            return Response::json(array(
+                            'status' => 0,
+                            'message' => $e->getMessage()
+                ));
+        }
+    }
 }

@@ -4,13 +4,13 @@
     {% else %}
     <h3 class="title_line">Đề thi</h3>  
     <div class="tab-pane fade show active" id="nganhang" role="tabpanel" aria-labelledby="contact-tab">
-        <form class="form-auth" id="form_questions">
+        <form class="form-auth" id="quizz" data-request='onCreateQuizz' data-request-success="ELEARNING.registerQuizzSuccess('new')">
             <div class="form-group">
-                <select class="custom-select" name="qs_cate" required>
+                <select class="custom-select" name="quizz_subject" required>
                     <option value="">Danh mục chủ đề</option>
-                    <option value="1">Câu 1</option>
-                    <option value="2">Câu 2</option>
-                    <option value="3">Câu 3</option>
+                    {% for subject in subjects%}
+                        <option value="{{subject.id}}">{{subject.name}}</option>
+                    {% endfor %}
                 </select>
             </div>
             <div class="form-group">
@@ -21,7 +21,7 @@
 
             </div>
             <div class="form-group">
-                <select class="custom-select" name="qs_time" required>
+                <select class="custom-select" name="quizz_time" required>
                     <option value="">Thời gian làm bài</option>
                     <option value="15">15 phút</option>
                     <option value="30">30 phút</option>

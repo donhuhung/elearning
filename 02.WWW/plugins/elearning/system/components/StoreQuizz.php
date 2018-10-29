@@ -2,7 +2,7 @@
 
 use Cms\Classes\ComponentBase;
 use Elearning\System\Models\StoreQuizz As StoreQuizzModel;
-use Elearning\System\Models\StoreQuizz As StoreQuizzModel;
+use Elearning\System\Models\Subject;
 use Request;
 use Redirect;
 use Response;
@@ -59,6 +59,74 @@ class StoreQuizz extends ComponentBase
             $this->page['quizz'] = StoreQuizzModel::find($store_id);
         }                
         $this->page['store_id'] = $store_id;
-        $this->page['subjects'] = 
+        $this->page['subjects'] = Subject::getList();
+    }
+    
+    public function onCreateQuizz()
+    {
+        try {
+            $storeId = StoreQuizzModel::store();
+            if ($storeId) {
+                return Response::json(array(
+                            'status' => 1,
+                            'message' => 'Success'
+                ));
+            } else {
+                return Response::json(array(
+                            'status' => 0,
+                            'message' => 'Error'
+                ));
+            }
+        } catch (\Exception $e) {
+            return Response::json(array(
+                            'status' => 0,
+                            'message' => $e->getMessage()
+                ));
+        }
+    }
+    
+    public function onUpdateQuizz() {
+        try {
+            $store_id = $this->property('storeId');
+            $storeId = StoreQuizzModel::edit($store_id);
+            if ($storeId) {
+                return Response::json(array(
+                            'status' => 1,
+                            'message' => 'Success'
+                ));
+            } else {
+                return Response::json(array(
+                            'status' => 0,
+                            'message' => 'Error'
+                ));
+            }
+        } catch (\Exception $e) {
+            return Response::json(array(
+                            'status' => 0,
+                            'message' => $e->getMessage()
+                ));
+        }
+    }
+    
+    public function onDelete() {
+        try {            
+            $result = StoreQuizzModel::onDelete();
+            if ($result) {
+                return Response::json(array(
+                            'status' => 1,
+                            'message' => 'Success'
+                ));
+            } else {
+                return Response::json(array(
+                            'status' => 0,
+                            'message' => 'Error'
+                ));
+            }
+        } catch (\Exception $e) {
+            return Response::json(array(
+                            'status' => 0,
+                            'message' => $e->getMessage()
+                ));
+        }
     }
 }

@@ -44,4 +44,25 @@ class Question extends Model
         }
         return false;
     }
+    
+    public static function onDelete()
+    {
+        $question_id = post('record_id');
+        if($question_id && $question_id > 0)
+        {
+            $data = self::find($question_id);
+            if($data){
+                $data['is_active'] = 0;
+                $data->save();
+                return true;
+            }              
+            return false;
+        }        
+        return false;
+    }
+    
+    public static function randomQuestion($number_question)
+    {
+        return self::where('is_active', 1)->orderByRaw('RAND()')->take(10)->get();
+    }
 }
