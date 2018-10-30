@@ -1,0 +1,61 @@
+<div class="left_content">
+<div id="content" class="fx-tiles">
+      <!-- FULL WIDTH LAYOUT -->
+      <div class="fx-grid fx-cf">
+        <div class="fx-col">
+          <!-- ADD BLOCK(S) HERE -->
+          <!-- START: SHARE BLOCK -->
+          <div class="fx-block fx-purple fx-share fx-align-left fx-cf purple-bg" style="padding:20px ">
+            <div class="fx-copy" style="padding-left:20px; padding-bottom:0">
+              <h3>Trắc nghiệm</h3>
+              <p>Hãy suy nghĩ thật kỹ trước khi đưa ra đáp án của mình. Chúc các bạn làm bài thật tốt!</p>
+              <p><a href="#game" id="start-button" class="fx-btn">Bắt đầu</a></p>
+            </div>
+          </div>
+        </div>
+        <!-- FULL WIDTH LAYOUT -->
+        <div class="fx-grid fx-cf">
+          <div class="fx-col">
+            <!-- ADD BLOCK(S) HERE -->
+            <div class="fx-block game-container">
+              <div id="game">
+                <div class="game-grid">
+                  <p id="timer" class="timer">
+                    1:00:00
+                  </p>
+                  <div class="game-left-col">
+                    <div class="gauge-container" style="background-size: 100px 100px;">
+                      <canvas id="gauge" class="gauge" width="240" height="240"></canvas>
+                      <div class="score-number">0</div>
+                    </div>
+                  </div>
+                  <div class="game-right-col">
+                    <div class="questions">
+                      <div class="question">
+                        <p><span class="number">1 </span><span class="questionText">Online Bills of Lading help you:</span></p>
+                        <div class="answers">
+                          <label><input type="checkbox" class="answer" data-correct="false"><span class="text">A. Increase efficiency</span></label>
+                          <label><input type="checkbox" class="answer" data-correct="false"><span class="text">B. Decrease errors</span></label>
+                          <label><input type="checkbox" class="answer" data-correct="true"><span class="text">C. Both of the above</span></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="game-end-times-up">
+                      <p id="time-out-text" class="game-end-text"></p>
+                      <a href="/kiem-tra" class="fx-btn">Làm lại</a>
+
+                    </div>
+                    <div id="game-end">
+                      <p id="game-end-text" class="game-end-text"></p>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>  
+
+    </div> 
+</div>     

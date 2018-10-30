@@ -6,6 +6,7 @@ use Auth;
 use Carbon\Carbon;
 use Elearning\System\Models\Province;
 use Elearning\System\Models\District;
+use Elearning\System\Models\UserCourse;
 
 class Helper {
 
@@ -163,6 +164,40 @@ class Helper {
     {
         $district = District::findOrFail($district_id);
         return $district->name;
+    }
+
+    public static function checkStudentCourse($course_id)
+    {
+        $user = self::checkUser();
+        if($user)
+        {
+            $user_id = $user->id;
+            $check_exist = UserCourse::checkStudentCourse($user_id, $course_id);
+            if(!$check_exist)
+            {
+                $html = '<a href="javascript:void(0)" data-course="<?php echo $course_id?>" class="btn btn-link btn-link--addcard join-course">Tham gia khóa học</a>';
+                return $html;
+            }
+            return false;
+        }
+    }
+
+    public static function getCourseByStudent()
+    {
+        $user = self::checkUser();
+        if($user){
+            $user_id = $user->id;
+            $courses = UserCourse::where('student_id',$user_id)->get();
+            $arrCourse = array();
+            if($courses){
+                foreach ($courses as $course){
+                    array_push($arrCourse, $course->course_id);
+                }
+                return $arrCourse;
+            }
+            return false;
+        }       
+        return false; 
     }
 }
 

@@ -1,0 +1,27 @@
+{%if(courses|length) > 0%}
+    {% for course in courses%}
+    <div class="item">
+        <div class="img">
+            <a href="/khoa-hoc/{{course.slug}}">
+                <img src="/storage/app/media/{{course.thumbnail}}" alt="{{course.name}}"/>
+            </a>            
+        </div>
+        <div class="ders">
+            <h4 class="title">
+                <a href="/khoa-hoc/{{course.slug}}">{{course.name}}</a>
+            </h4>
+            <h5 class="position">{{course.teacher.name}}</h5>            
+            {{course.description|raw}}
+        </div>
+        <div class="rating-course">
+            <div class="card-text card-text--rating">
+                <p class="price">{{course.discount?course.discount|formatMoney:course.price|formatMoney}}đ</p>
+                <p class="rating">
+                   {{course.rating|generateRating}}
+                    <!--<span>{{course.rating}}</span>-->
+                </p>                
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{%endif%}

@@ -226,7 +226,9 @@ class Plugin extends PluginBase {
             'Demo\Youtube\Components\Homepage' => 'youtube',
             'Demo\Youtube\Components\Live' => 'livestream',
             'Elearning\System\Components\Forum' =>'forum',
-            'Elearning\System\Components\StoreQuizz' =>'management_store_quizz'            
+            'Elearning\System\Components\StoreQuizz' =>'management_store_quizz',            
+            'Elearning\System\Components\Quizz' =>'quizz',
+            'Elearning\System\Components\UserCourse' =>'user_course'           
 
         ];
     }
@@ -304,9 +306,8 @@ class Plugin extends PluginBase {
                 'formatDate' => ['Elearning\System\Classes\Helper', 'formatDate'],
                 'formatProvince' => ['Elearning\System\Classes\Helper', 'formatProvince'],
                 'formatDistrict' => ['Elearning\System\Classes\Helper', 'formatDistrict'],
-                'formatDateForm' => ['Elearning\System\Classes\Helper', 'formatDateForm']
-                
-                
+                'formatDateForm' => ['Elearning\System\Classes\Helper', 'formatDateForm'],
+                'checkStudentCourse' => ['Elearning\System\Classes\Helper', 'checkStudentCourse']                
             ]
         ];
     }

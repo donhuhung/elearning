@@ -76,6 +76,30 @@ $(document).ready(function () {
         });
     });
 
+
+    $(".join-course").on('click', function () {
+        var course_id = $(this).attr('data-course');        
+        $.request('account_elearning::onJoinCourse', {
+            data: {course_id: course_id},
+            success: function (data) {
+                var status = data.status;
+                if (status == 1)
+                {
+                    swal({
+                        title: "Thông báo!",
+                        text: "Tham gia khóa học thành công!",
+                        type: "success"
+                    }, function () {
+                        window.location.reload();
+                    });
+                } else
+                {
+                    return;
+                }
+            }
+        });
+    });
+
     $("body").delegate('.add-answer','click', function () {
         block_answer++;
         $("#total-answer").val(block_answer);

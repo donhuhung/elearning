@@ -5,9 +5,15 @@
             <div class="pic_file_topic radius">
                 <span>Chọn hình ảnh</span>
                 <input class="file_input_pic" type="file" name="avatar">
+                 {% if(user.avatar)%}
+                <div class="pic_file_topic hasAvatar">
+                    <img src="{{user.avatar.getPath()}}" alt="" class="pic_thumb_file">
+                </div>
+                {% else %}
                 <div class="pic_file_topic--avatar">
                     <img src="images" alt="" class="pic_thumb_file">
-                </div>
+                </div>                
+                {% endif %}      
             </div>
         </div>
         <div class="row">

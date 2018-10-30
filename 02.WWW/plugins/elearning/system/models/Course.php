@@ -2,8 +2,10 @@
 
 use Model;
 use Elearning\System\Classes\Helper As HelperClass;
+use Elearning\System\Models\UserCourse;
 use Response;
 use System\Models\File;
+use DB;
 
 /**
  * course Model
@@ -224,5 +226,21 @@ class Course extends Model
         fwrite($ifp, base64_decode($base64_string));
         fclose($ifp);
         return( $output_file );
+    }
+
+    public static function updateTotalStudent($course_id)
+    {
+        Db::table('elearning_system_courses')->increment('total_student', 1, ['id' => $course_id]);
+    }
+
+    public static function getCourseByStudent()
+    {            
+        $arrCourse = HelperClass::getCourseByStudent() ;        
+        if($arrCourse)
+        {
+            return self::whereIn('id', $arrCourse)
+                ->get();
+        }
+        return false;
     }
 }

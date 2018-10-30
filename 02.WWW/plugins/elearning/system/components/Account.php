@@ -5,6 +5,7 @@ namespace Elearning\System\Components;
 use Cms\Classes\ComponentBase;
 use Elearning\System\Models\Province;
 use Elearning\System\Models\District;
+use Elearning\System\Models\UserCourse;
 use Response;
 use Elearning\System\Classes\Helper As HelperClass;
 use System\Models\File;
@@ -25,7 +26,7 @@ class Account extends ComponentBase {
 
     public function onRun() {
         $this->page['provinces'] = Province::all();
-        $this->page['districts'] = District::all();
+        $this->page['districts'] = District::all();        
     }
 
     public function onLoadDistrict() {
@@ -96,6 +97,29 @@ class Account extends ComponentBase {
         fwrite($ifp, base64_decode($base64_string));
         fclose($ifp);
         return( $output_file );
+    }
+
+    public function onJoinCourse()
+    {
+        try {
+            $reseult = UserCourse::joinCourse();
+            if ($reseult) {
+                return Response::json(array(
+                            'status' => 1,
+                            'message' => 'Success'
+                ));
+            } else {
+                return Response::json(array(
+                            'status' => 0,
+                            'message' => 'Error'
+                ));
+            }
+        } catch (\Exception $e) {
+            return Response::json(array(
+                            'status' => 0,
+                            'message' => $e->getMessage()
+                ));
+        }
     }
 
 }

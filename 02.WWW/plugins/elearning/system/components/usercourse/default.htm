@@ -1,0 +1,35 @@
+<div class="section">
+    <div class="container">
+        <h3 class="title_line">Khóa học</h3>
+        <div class="card-deck card-deck--marketing">
+            {% for course in listCourses%}
+            <div class="card">
+                <a class="link_img" href="/khoa-hoc/{{course.slug}}">
+                    <img class="card-img-top" src="/storage/app/media/{{course.thumbnail}}" alt="Card image cap">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="/khoa-hoc/{{course.slug}}">{{course.name}}</a>
+                    </h5>
+                    <p class="card-text">
+                        <small class="text-muted">{{course.teacher.name}}</small>
+                    </p>
+                    <div class="card-text card-text--rating">
+                        <p class="rating">
+                           {{course.rating|generateRating}}
+                        </p>                        
+                    </div>
+                    <div class="card-text card-price">
+                        {% if (course.discount)%}
+                            <p class="old">{{course.price|formatMoney}}đ</p>
+                            <p class="discount">{{course.discount|formatMoney}}đ</p>
+                        {% else %}
+                            <p class="discount">{{course.price|formatMoney}}đ</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
