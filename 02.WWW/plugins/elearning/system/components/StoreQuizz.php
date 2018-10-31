@@ -2,7 +2,8 @@
 
 use Cms\Classes\ComponentBase;
 use Elearning\System\Models\StoreQuizz As StoreQuizzModel;
-use Elearning\System\Models\Subject;
+use Elearning\System\Models\Course;
+use Elearning\System\Classes\Helper As HelperClass;
 use Request;
 use Redirect;
 use Response;
@@ -59,7 +60,11 @@ class StoreQuizz extends ComponentBase
             $this->page['quizz'] = StoreQuizzModel::find($store_id);
         }                
         $this->page['store_id'] = $store_id;
-        $this->page['subjects'] = Subject::getList();
+        $user = HelperClass::checkUser();
+        if($user){
+            $user_id = $user->id;
+            $this->page['courses'] = Course::getCourseByTeacher($user_id);
+        }        
     }
     
     public function onCreateQuizz()

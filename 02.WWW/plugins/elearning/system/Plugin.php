@@ -228,7 +228,8 @@ class Plugin extends PluginBase {
             'Elearning\System\Components\Forum' =>'forum',
             'Elearning\System\Components\StoreQuizz' =>'management_store_quizz',            
             'Elearning\System\Components\Quizz' =>'quizz',
-            'Elearning\System\Components\UserCourse' =>'user_course'           
+            'Elearning\System\Components\UserCourse' =>'user_course',
+            'Elearning\System\Components\SidebarUser' =>'sidebar_user'           
 
         ];
     }

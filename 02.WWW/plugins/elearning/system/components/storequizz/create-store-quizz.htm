@@ -6,10 +6,10 @@
     <div class="tab-pane fade show active" id="nganhang" role="tabpanel" aria-labelledby="contact-tab">
         <form class="form-auth" id="quizz" data-request='onCreateQuizz' data-request-success="ELEARNING.registerQuizzSuccess('new')">
             <div class="form-group">
-                <select class="custom-select" name="quizz_subject" required>
+                <select class="custom-select" name="quizz_course" required>
                     <option value="">Danh mục chủ đề</option>
-                    {% for subject in subjects%}
-                        <option value="{{subject.id}}">{{subject.name}}</option>
+                    {% for course in courses%}
+                        <option value="{{course.id}}">{{course.name}}</option>
                     {% endfor %}
                 </select>
             </div>

@@ -1,6 +1,12 @@
 var ELEARNING = ELEARNING || {};
 var block_answer = 1;
-var time_quizz = parseInt($("#time_quizz").val()) * 60;
+<<<<<<< .mine
+var c = 5;
+||||||| .r22
+var c = 180;
+=======
+var time_quizz = parseInt($("#time_quizz").val())*60;
+>>>>>>> .r23
 var t;
 $(document).ready(function () {
     $(window).on('ajaxErrorMessage', function (event, message) {
@@ -81,7 +87,7 @@ $(document).ready(function () {
         $("#question-introduce").hide();
         timedCount();
     });
-
+    
     $(".answer").on('change', function () {
         var number_answer = $(".answer:checked").length;
         $("#number-answer").text(number_answer);
@@ -240,21 +246,8 @@ ELEARNING.registerQuizzSuccess = function (style) {
     }
 }
 
-ELEARNING.registerTestSuccess = function (style) {
-    if (style != "auto")
-    {
-        swal({
-            title: "Thành công!!",
-            text: "Bài thi của bạn đã được lưu trong hệ thống! Hãy vào trang kết quả kiểm tra để xem kết quả!",
-            type: "success"
-        }, function () {
-            window.location.href="/ket-qua-kiem-tra";
-        });
-    }
-}
-
 function timedCount()
-{
+{    
     if (time_quizz == "off")
     {
         return false;
@@ -267,7 +260,7 @@ function timedCount()
     $('#timer').html(result);
 
     if (time_quizz == 0)
-    {
+    {        
         $("#submit-question").remove();
         $('#iTimeShow').html('Hết giờ!!!');
         $('#timer').hide();
@@ -277,9 +270,6 @@ function timedCount()
             text: "Đã hết giờ làm bài, kết quả kiểm tra của bạn sẽ có trong thời gian sớm nhất!",
             type: "success"
         });
-        setTimeout(function(){
-            $("#form_quizz")[0].submit();
-        }, 1000);
         return false;
 
     }

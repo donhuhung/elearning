@@ -49,4 +49,5 @@ class UserCourse extends Model
         ->where('is_active',1)
         ->first();
     }
+    
 }

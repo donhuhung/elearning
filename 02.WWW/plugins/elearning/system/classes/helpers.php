@@ -175,7 +175,7 @@ class Helper {
             $check_exist = UserCourse::checkStudentCourse($user_id, $course_id);
             if(!$check_exist)
             {
-                $html = '<a href="javascript:void(0)" data-course="<?php echo $course_id?>" class="btn btn-link btn-link--addcard join-course">Tham gia khóa học</a>';
+                $html = '<a href="javascript:void(0)" data-course="'.$course_id.'" class="btn btn-link btn-link--addcard join-course">Tham gia khóa học</a>';
                 return $html;
             }
             return false;

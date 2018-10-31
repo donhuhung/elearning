@@ -1,8 +1,9 @@
 title = "GoodWorks Online Academy"
-url = "/kiem-tra"
+url = "/lam-bai-kiem-tra/:course_id?|^[0-9]+$"
 layout = "default"
 is_hidden = 0
 tab="quizz"
 [quizz]
+courseId = "{{ :course_id }}"
 ==
 {% component 'quizz' %}

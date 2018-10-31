@@ -4,6 +4,7 @@ namespace Elearning\System\Models;
 
 use Model;
 use Elearning\System\Models\StoreQuizzContent;
+use Elearning\System\Models\UserCourse;
 
 /**
  * Model
@@ -23,13 +24,24 @@ class StoreQuizz extends Model {
      */
     public $table = 'elearning_system_store_quizz';
 
+    public $hasMany = [
+        'quizz_content' => ['Elearning\System\Models\StoreQuizzContent']
+    ];
+    public $belongsTo = [];
+    public $belongsToMany = [];
+    public $morphTo = [];
+    public $morphOne = [];
+    public $morphMany = [];
+    public $attachOne = [];
+    public $attachMany = [];
+
     public static function getListAllPaging($per_item, $page) {
         return self::where('is_active', 1)->paginate($per_item, $page);
     }
     
     public static function store() {
         $store_id = self::insertGetId(
-                        array('subject_id' => post('quizz_subject'),
+                        array('course_id' => post('quizz_course'),
                             'number_question' => post('number_question'),
                             'time_quizz' => post('quizz_time'),
                             'is_active' => 1)
@@ -44,7 +56,7 @@ class StoreQuizz extends Model {
     public static function edit($store_id) {
         $data = self::find($store_id);
         if ($data) {
-            $data['subject_id'] = post('quizz_subject');
+            $data['course_id'] = post('quizz_course');
             $data['number_question'] = str_slug(post('number_question'));
             $data['time_quizz'] = post('quizz_time');
             $data->save();
@@ -68,6 +80,11 @@ class StoreQuizz extends Model {
             return false;
         }        
         return false;
+    }
+
+    public static function getQuizz($course_id)
+    {
+        return self::where('is_active',1)->where('course_id',$course_id)->first();
     }
 
 }

@@ -78,3 +78,15 @@
 1.0.26:
     - 'Created table elearning_system_course_student'
     - builder_table_create_elearning_system_course_student.php
+1.0.27:
+    - 'Updated table elearning_system_store_quizz'
+    - builder_table_update_elearning_system_store_quizz_3.php
+1.0.28:
+    - 'Created table elearning_system_result_quizz'
+    - builder_table_create_elearning_system_result_quizz.php
+1.0.29:
+    - 'Created table elearning_system_quizz_log'
+    - builder_table_create_elearning_system_quizz_log.php
+1.0.30:
+    - 'Updated table elearning_system_quizz_log'
+    - builder_table_update_elearning_system_quizz_log.php

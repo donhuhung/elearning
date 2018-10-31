@@ -21,19 +21,28 @@ class Question extends Model
      * @var string The database table used by the model.
      */
     public $table = 'elearning_system_question';
+    public $hasMany = [
+        'answers' => ['Elearning\System\Models\Answer']
+    ];
+    public $belongsTo = [];
+    public $belongsToMany = [];
+    public $morphTo = [];
+    public $morphOne = [];
+    public $morphMany = [];
+    public $attachOne = [];
+    public $attachMany = [];
+
 
     public static function getListAllPaging($per_item,$page){
         return self::where('is_active',1)->paginate($per_item,$page);
     }
 
-    public static function store() {        
-        $course_id = post('qs_cate');
+    public static function store() {                
         $question = post('question');
         $user = HelperClass::checkUser();
         $user_id = $user->id;            
         $question_id = self::insertGetId(
-            array('question' => $question, 
-                    'course_id' => $course_id,
+            array('question' => $question,                     
                     'is_active' =>1,
                     'user_id' => $user_id)
         );     
@@ -63,6 +72,11 @@ class Question extends Model
     
     public static function randomQuestion($number_question)
     {
-        return self::where('is_active', 1)->orderByRaw('RAND()')->take(10)->get();
+        return self::where('is_active', 1)->orderByRaw('RAND()')->take($number_question)->get();
+    }
+
+    public static function getListQuestion($arrQuestion)
+    {
+        return self::whereIn('id', $arrQuestion)->get();
     }
 }

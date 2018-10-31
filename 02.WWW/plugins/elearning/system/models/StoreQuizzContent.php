@@ -23,6 +23,17 @@ class StoreQuizzContent extends Model {
      */
     public $table = 'elearning_system_store_quizz_info';
 
+    public $hasOne = [];
+    public $hasMany = [];
+    public $belongsTo = [];
+    public $belongsToMany = [];
+    public $morphTo = [];
+    public $morphOne = [];
+    public $morphMany = [];
+    public $attachOne = [];
+    public $attachMany = [];
+
+
     public static function store($store_id, $number_question) {
         $data = self::where('store_quizz_id',$store_id)->get();
         if($data){
